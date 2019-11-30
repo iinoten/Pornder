@@ -9,7 +9,6 @@ class AppPage extends Component{
   render(){
     return(
       <div className="App-page">
-        <Header />
         <SwipeCards />
       </div>
     );
