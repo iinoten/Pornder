@@ -1,3 +1,61 @@
+.ControllButtons {
+  position: absolute;
+  bottom: 3vh;
+  width: 100vw;
+}
+
 .Swipe-card {
   margin-left: 5vw;
+}
+.SubButton {
+  height: 35px; width: 35px;
+  border-radius: 50%;
+  border: none;
+  margin: 10px;
+  background-color: #141414;
+  box-shadow:1px 4px 4px 1px #000000;
+  margin: 0 7px;
+}
+.MainButton {
+  height: 50px; width: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #141414;
+  box-shadow:0px 3px 4px 1px #000000;
+  margin: 0 10px;
+}
+
+.Rewind-button {
+  background-image: url('./image/Rewind.png');
+  background-size: 57% 57%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Superlike-button {
+  background-image: url('./image/Superlike.png');
+  background-size: 57% 57%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Boost-button {
+  background-image: url('./image/Boost.png');
+  background-size: 80% 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Dislike-button {
+  background-image: url('./image/Dislike.png');
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Like-button {
+  background-image: url('./image/Like.png');
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
