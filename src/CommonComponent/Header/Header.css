@@ -1,0 +1,38 @@
+.App-header {
+  height: 46px;
+  width: 100%;
+  background-color: hsl(0, 0%, 8%);
+  position: relative;
+  border-bottom: solid rgba(0, 0, 0, 0.2) 3px;
+}
+
+.Header-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.account_icon {
+  display: inline-block;
+  position: absolute;
+  left: 15%;
+  top: 8px;
+  background-image: url('./image/off_account_icon.png');
+  background-size: contain;
+}
+.mark_icon {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url('./image/on_mark_icon.png');
+  background-size: contain;
+}
+.matches_icon {
+  display: inline-block;
+  position: absolute;
+  right: 15%;
+  top: 8px;
+  background-image: url('./image/off_matches_icon.png');
+  background-size: contain;
+}
