@@ -45,6 +45,13 @@ class SwipeCards extends Component{
             <div className="Swipe-card"><Card>No more cards</Card></div>
           )}
         </div>
+        <div className="ControllButtons">
+          <button className="Rewind-button SubButton" />
+          <button className="Dislike-button MainButton" />
+          <button className="Superlike-button SubButton" />
+          <button className="Like-button MainButton" />
+          <button className="Boost-button SubButton" />
+        </div>
       </div>
     );
   }
