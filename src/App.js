@@ -10,8 +10,8 @@ import ProfilePage from './Corepage/ProfilePage/ProfilePage';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <div className='App'>
+      <Header />
         <Route path='/' exact component={()=>(<h1>/</h1>)} />
         <Route path='/app/recs' component={()=><AppPage />} />
         <Route path='/app/profile' component={()=><ProfilePage />} />
