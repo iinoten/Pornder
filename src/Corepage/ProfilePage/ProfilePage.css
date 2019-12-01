@@ -30,3 +30,32 @@
   background-repeat: no-repeat;
   margin-left: 20%;
 }
+
+.Add-clip-Button {
+  height: 60px;
+  width: 60px;
+  background-color: #F5953D;
+  border-radius: 50%;
+  border: none;
+  background-image: url('./image/Display_icon.png');
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow:0px 3px 4px 1px #000000;
+  position: relative;
+}
+.Mini_mark {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #141414;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url('./image/Batu_icon.png');
+  box-shadow:0px 3px 4px 1px #000000;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotateZ(45deg) translateX(20%);
+}
