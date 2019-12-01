@@ -59,3 +59,14 @@
   background-repeat: no-repeat;
   transform: rotateZ(45deg) translateX(20%);
 }
+.In_ProfilePage {
+  height: 50px !important;
+  width: 50px !important;
+  margin-top: 10vw;
+}
+.In_ProfilePage.Boost-button {
+  margin-right: 10%;
+}
+.In_ProfilePage.Superlike-button {
+  margin-left: 10%;
+}
