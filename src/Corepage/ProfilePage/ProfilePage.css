@@ -1,0 +1,32 @@
+.ProfilePage {
+  
+}
+.Main-icon {
+  background-image: url('./image/Big_mark.png');
+  width: 45vw;
+  height: 45vw;
+  background-size: cover;
+  margin: 20% auto
+}
+.EditButton {
+  background-color: #141414;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow:0px 3px 4px 1px #000000;
+}
+.Config {
+  background-image: url('./image/Setting_icon.png');
+  background-size: 40% 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 20%;
+}
+.Info {
+  background-image: url('./image/Info_icon.png');
+  background-size: 40% 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: 20%;
+}
