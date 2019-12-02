@@ -1,0 +1,41 @@
+.New-tube-title {
+  color: #f6953e;
+  text-align: left;
+  padding-left: 20px;
+  margin: 5px 0;
+}
+
+.New-Clip-icon {
+  margin: 0;
+  height: 70px !important;
+  width: 70px !important;
+  background-color: #f5f7fa;
+  border-radius: 50%;
+  background-image: url('./image/New_clip_icon.png');
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: solid #dfe4e9 2px;
+  vertical-align: top;
+  color: rgba(0, 0, 0, 0);
+  margin-right: 20px;
+}
+.Like-Persons {
+  height: 71px;
+  width: 71px;
+  border-radius: 50%;
+  background-color: #f5f7fa;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.item {
+  /* 横スクロール用 */
+  display: inline-block;
+}
+.horizontal-list {
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-left: 20px;
+}
