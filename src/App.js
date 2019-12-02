@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import MediaQuery from 'react-responsive';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
 import AppPage from './Corepage/AppPage/AppPage';
 import Header from './CommonComponent/Header/Header';
 import ProfilePage from './Corepage/ProfilePage/ProfilePage';
@@ -41,9 +41,11 @@ class App extends Component{
       <BrowserRouter>
         <div className='App'>
         <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
-          <Route path='/app/profile' component={()=><ProfilePage />} />
-          <Route path='/app/recs' component={()=><AppPage />} />
-          <Route path='/app/matches' component={()=><MatchesPage />} />
+          <Switch>
+            <Route path='/app/profile' component={()=><ProfilePage />} />
+            <Route path='/app/recs' component={()=><AppPage />} />
+            <Route path='/app/matches' component={()=><MatchesPage />} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
