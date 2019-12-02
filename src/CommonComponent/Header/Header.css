@@ -2,7 +2,8 @@
   height: 46px;
   width: 100%;
   background-color: hsl(0, 0%, 8%);
-  position: relative;
+  position: fixed;
+  top: 0;
   border-bottom: solid rgba(0, 0, 0, 0.2) 3px;
 }
 
