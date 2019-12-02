@@ -8,32 +8,59 @@
 }
 
 .Header-icon {
-  height: 32px;
-  width: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.account_icon {
+.account-mark {
   display: inline-block;
   position: absolute;
   left: 15%;
   top: 8px;
-  background-image: url('./image/off_account_icon.png');
-  background-size: contain;
 }
-.mark_icon {
+.on-account_icon {
+  height: 32px;
+  width: 32px;
+  background-image: url('./image/on_account_icon.png');
+}
+.off-account_icon {
+  height: 27px;
+  width: 27px;
+  background-image: url('./image/off_account_icon.png');
+}
+.mark-mark {
   display: inline-block;
   position: absolute;
   top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  background-image: url('./image/on_mark_icon.png');
   background-size: contain;
 }
-.matches_icon {
+.on-mark_icon {
+  height: 32px;
+  width: 32px;
+  background-image: url('./image/on_mark_icon.png');
+}
+.off-mark_icon {
+  height: 27px;
+  width: 27px;
+  background-image: url('./image/off_mark_icon.png');
+}
+
+.matches-mark {
   display: inline-block;
   position: absolute;
   right: 15%;
   top: 8px;
-  background-image: url('./image/off_matches_icon.png');
   background-size: contain;
+}
+.on-matches_icon {
+  height: 32px;
+  width: 32px;
+  background-image: url('./image/on_matches_icon.png');
+}
+.off-matches_icon {
+  height: 27px;
+  width: 27px;
+  background-image: url('./image/off_matches_icon.png');
 }
