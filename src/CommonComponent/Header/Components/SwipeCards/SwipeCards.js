@@ -19,10 +19,14 @@ class SwipeCards extends Component{
       ]
     }
   }
-  remove = () =>
+  remove = () => {
     this.setState(({cards}) => ({
       cards: cards.slice(1, cards.length),
     }));
+    this.setState(({cards}) => ({
+      cards: cards.slice(1, cards.length),
+    }));
+  }
   render(){
     const {cards} = this.state;
     return(
@@ -33,16 +37,17 @@ class SwipeCards extends Component{
               <Swipeable
                 buttons={({left, right}) => (
                   <div style={actionsStyles}>
+
                   </div>
                 )}
                 onAfterSwipe={this.remove}
               >
-                <div className="Swipe-card"><Card img_src='https://ci.phncdn.com/videos/201509/07/56826471/original/(m=eGNdHgaaaa)(mh=UkbvhbbsBP4jLw54)6.jpg'>{cards[0]}</Card></div>
+                <div className="Swipe-card"><Card Video_title={"Fuck'n Myself In The Shower"} img_src='https://ci.phncdn.com/videos/201910/02/252356862/original/(m=e0YHGgaaaa)(mh=VUXLIZUoF2OZunpL)12.jpg'>abcd</Card></div>
               </Swipeable>
               { this.state.cards.length > 1 && cards[1]} }
             </div>
           ) : (
-            <div className="Swipe-card"><Card>No more cards</Card></div>
+            <div className="Swipe-card"><Card></Card></div>
           )}
         </div>
         <div className="ControllButtons">
