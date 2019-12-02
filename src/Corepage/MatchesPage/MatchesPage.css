@@ -1,3 +1,6 @@
+.MatchesPage {
+  overflow-y: scroll;
+}
 .New-tube-title {
   color: #f6953e;
   text-align: left;
