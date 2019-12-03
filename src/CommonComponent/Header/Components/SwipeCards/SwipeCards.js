@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import Swipeable from "react-swipy"
 import './SwipeCards.css'
 import Card from '../Card/Card';
-//    import Pornhub from '@bowwow/pornhub_api;'
+
+const Pornhub = require('@bowwow/pornhub_api');
 
 const wrapperStyles = {position: "relative", width: "250px", height: "250px"};
 const actionsStyles = {
@@ -121,9 +122,9 @@ class SwipeCards extends Component{
           rating: 61
         },
         {
-          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
-          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
           title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
+          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
+          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
           views: 969123,
           rating: 61
         }
@@ -131,12 +132,29 @@ class SwipeCards extends Component{
     }
   }
   remove = () => {
+    //const ph = new Pornhub();
     console.log(this.state.cards)
     this.setState(prevState => {
+      let new_video_data = {
+        title: '',
+        video_url: '',
+        thumb: '',
+        views: 0,
+          rating: 0
+      }
+      /*
+      ph.search({category:'Big Tits'}).then(infos=>{
+        new_video_data.title = infos.title;
+        new_video_data.video_url = infos.url;
+        new_video_data.thumb = infos.thumb;
+        new_video_data.views = infos.views;
+        new_video_data.rating = Math.floor(infos.rating)
+      });
+      */
       let temp_card_array = prevState.cards;
       temp_card_array.shift();
-      temp_card_array.push("five")
-      console.log( temp_card_array)
+      temp_card_array.push(new_video_data)
+      console.log( new_video_data )
       return { cards: temp_card_array}
     })
   }
@@ -163,7 +181,7 @@ class SwipeCards extends Component{
               </Swipeable>
             </div>
           ) : (
-            <div className="Swipe-card"><Card></Card></div>
+            <div className="Swipe-card"><Card Video_title={"もうないです"}/></div>
           )}
         </div>
         <div className="ControllButtons">
