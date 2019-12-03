@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Swipeable from "react-swipy"
 import './SwipeCards.css'
 import Card from '../Card/Card';
+//    import Pornhub from '@bowwow/pornhub_api;'
 
 const wrapperStyles = {position: "relative", width: "250px", height: "250px"};
 const actionsStyles = {
@@ -105,7 +106,27 @@ class SwipeCards extends Component{
     super();
     this.state = {
       cards: [
-        'one', 'two', 'three'
+        {
+          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
+          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
+          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
+          views: 969123,
+          rating: 61
+        },
+        {
+          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
+          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
+          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
+          views: 969123,
+          rating: 61
+        },
+        {
+          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
+          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
+          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
+          views: 969123,
+          rating: 61
+        }
       ]
     }
   }
@@ -119,12 +140,11 @@ class SwipeCards extends Component{
       return { cards: temp_card_array}
     })
   }
-  onSwipe_handler = (e) => {
-    console.log('swipeeeeeee', e)
+  onSwipe_handler = (e,card) => {
+    console.log(e, 'HOUKOU', this.state.cards[0])
   }
   render(){
     console.log(this.state.cards)
-    const {cards} = this.state;
     return(
       <div>
         <div style={wrapperStyles}>
@@ -139,9 +159,8 @@ class SwipeCards extends Component{
                 )}
                 onAfterSwipe={this.remove}
               >
-                <div className="Swipe-card"><Card Video_title={cards[0]} img_src='https://ci.phncdn.com/videos/201910/02/252356862/original/(m=e0YHGgaaaa)(mh=VUXLIZUoF2OZunpL)12.jpg'>{cards[0]}</Card></div>
+                <div className="Swipe-card"><Card Video_title={this.state.cards[0].title} rating={this.state.cards[0].rating} img_src={this.state.cards[0].thumb}/></div>
               </Swipeable>
-              { this.state.cards.length > 1 && cards[1]} }
             </div>
           ) : (
             <div className="Swipe-card"><Card></Card></div>
