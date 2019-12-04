@@ -153,9 +153,11 @@ class SwipeCards extends Component{
     }
   }
   onSwipe_handler = (e,card) => {
+    if(e === 'right') {
+      this.props.add_like_video(this.state.cards[0])
+    }
   }
   render(){
-    console.log(this.state.cards[0])
     return(
       <div>
         <div style={wrapperStyles}>

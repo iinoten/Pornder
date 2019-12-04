@@ -15,8 +15,18 @@ class App extends Component{
   constructor() {
     super();
     this.state = {
-      menu_state: 'recs'
+      menu_state: 'recs',
+      like_videoes: []
     }
+  }
+  add_like_video = (video) => {
+    this.setState(prevState => {
+      let temp_video_state = prevState.like_videoes;
+      console.log(temp_video_state)
+      temp_video_state.push(video);
+      return {like_videoes: temp_video_state}
+    })
+    console.log(this.state.like_videoes)
   }
   change_menu = (type) => {
     this.setState({ menu_state: type})
@@ -43,7 +53,7 @@ class App extends Component{
         <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
           <Switch>
             <Route path='/app/profile' component={()=><ProfilePage />} />
-            <Route path='/app/recs' component={()=><AppPage />} />
+            <Route path='/app/recs' component={()=><AppPage add_like_video={this.add_like_video} />} />
             <Route path='/app/matches' component={()=><MatchesPage />} />
           </Switch>
         </div>

@@ -9,7 +9,7 @@ class AppPage extends Component{
   render(){
     return(
       <div className="App-page">
-        <SwipeCards />
+        <SwipeCards add_like_video={this.props.add_like_video} />
       </div>
     );
   }
