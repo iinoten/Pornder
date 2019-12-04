@@ -133,18 +133,24 @@ class SwipeCards extends Component{
   }
   remove = () => {
     const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
-    axios.get(GET_VIDEO_FROM_CATEGORY, {params: {genre: 'Anal'}})
+    this.setState(prevData_for_remove => {
+      let temp_card_data = prevData_for_remove.cards;
+      temp_card_data.shift();
+      return {cards: temp_card_data}
+    })
+    for (let index = 0; index < 5; index++) {
+      console.log("swipe and get 5 datas")
+      axios.get(GET_VIDEO_FROM_CATEGORY, {params: {genre: 'Anal'}})
         .then((res) => {
           console.log(res.data)
           this.setState(prevState => {
-            let temp_card_info;
             let temp_card_array = prevState.cards;
-            temp_card_array.shift();
             temp_card_array.push(res.data)
             return { cards: temp_card_array}
           })
         })
         .catch(err => console.log("えらーー", err))
+    }
   }
   onSwipe_handler = (e,card) => {
   }
