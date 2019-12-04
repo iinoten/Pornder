@@ -140,9 +140,9 @@ class SwipeCards extends Component{
     })
     for (let index = 0; index < 5; index++) {
       console.log("swipe and get 5 datas")
-      axios.get(GET_VIDEO_FROM_CATEGORY, {params: {genre: 'Anal'}})
+      axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
         .then((res) => {
-          console.log(res.data)
+          console.log(all_video_genre[Math.floor(Math.random() * all_video_genre.length)])
           this.setState(prevState => {
             let temp_card_array = prevState.cards;
             temp_card_array.push(res.data)

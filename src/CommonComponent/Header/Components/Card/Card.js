@@ -13,7 +13,7 @@ class Card extends Component{
         <div className="Card-description">
           <h5 className="Video-title">{this.props.Video_title}</h5>
           <div className="Card-Sub-descripntion">
-            <p className="Card-Good_icon"/><p className="Card-Eval-rate">80%</p>
+            <p className="Card-Good_icon"/><p className="Card-Eval-rate">{this.props.rating}%</p>
           </div>
         </div>
       </div>

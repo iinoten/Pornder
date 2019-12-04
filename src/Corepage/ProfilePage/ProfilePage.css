@@ -1,5 +1,6 @@
 .ProfilePage {
   margin-top: 46px;
+  overflow: hidden;
 }
 .Main-icon {
   background-image: url('./image/Big_mark.png');
@@ -69,4 +70,6 @@
 }
 .In_ProfilePage.Superlike-button {
   margin-left: 10%;
+}
+body, html {
 }
