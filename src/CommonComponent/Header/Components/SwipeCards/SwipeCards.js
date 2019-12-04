@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import Swipeable from "react-swipy"
 import './SwipeCards.css'
 import Card from '../Card/Card';
+import axios from 'axios';
 
-const Pornhub = require('@bowwow/pornhub_api');
 
 const wrapperStyles = {position: "relative", width: "250px", height: "250px"};
 const actionsStyles = {
@@ -132,37 +132,24 @@ class SwipeCards extends Component{
     }
   }
   remove = () => {
-    //const ph = new Pornhub();
-    console.log(this.state.cards)
-    this.setState(prevState => {
-      let new_video_data = {
-        title: '',
-        video_url: '',
-        thumb: '',
-        views: 0,
-          rating: 0
-      }
-      /*
-      ph.search({category:'Big Tits'}).then(infos=>{
-        new_video_data.title = infos.title;
-        new_video_data.video_url = infos.url;
-        new_video_data.thumb = infos.thumb;
-        new_video_data.views = infos.views;
-        new_video_data.rating = Math.floor(infos.rating)
-      });
-      */
-      let temp_card_array = prevState.cards;
-      temp_card_array.shift();
-      temp_card_array.push(new_video_data)
-      console.log( new_video_data )
-      return { cards: temp_card_array}
-    })
+    const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
+    axios.get(GET_VIDEO_FROM_CATEGORY, {params: {genre: 'Anal'}})
+        .then((res) => {
+          console.log(res.data)
+          this.setState(prevState => {
+            let temp_card_info;
+            let temp_card_array = prevState.cards;
+            temp_card_array.shift();
+            temp_card_array.push(res.data)
+            return { cards: temp_card_array}
+          })
+        })
+        .catch(err => console.log("えらーー", err))
   }
   onSwipe_handler = (e,card) => {
-    console.log(e, 'HOUKOU', this.state.cards[0])
   }
   render(){
-    console.log(this.state.cards)
+    console.log(this.state.cards[0])
     return(
       <div>
         <div style={wrapperStyles}>
