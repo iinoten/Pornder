@@ -4,9 +4,18 @@ import Good_icon from './Good_icon.png'
 import './SwipeCard.css'
 
 class SwipeCard extends Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      image: null
+    }
+  }
+  componentWillReceiveProps(props){
+    console.log("maybe get new props", props)
+    this.setState({ image: <img className="Card_image" src={props.img_src} /> })
+  }
   render(){
-    console.log(this.props.children)
-    const image = this.props.img_src
+    console.log(this.state.image)
     return(
       <div className="Card">
         <img className="Card_image" src={this.props.img_src} />
