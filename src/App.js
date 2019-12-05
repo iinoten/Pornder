@@ -20,6 +20,7 @@ class App extends Component{
     }
   }
   add_like_video = (video) => {
+    /*
     this.setState(prevState => {
       let temp_video_state = prevState.like_videoes;
       console.log(temp_video_state)
@@ -27,6 +28,9 @@ class App extends Component{
       return {like_videoes: temp_video_state}
     })
     console.log(this.state.like_videoes)
+    */
+   console.log("do the add_like_video", video)
+   this.setState({like_videoes: this.state.like_videoes.concat(video)})
   }
   change_menu = (type) => {
     this.setState({ menu_state: type})
@@ -54,7 +58,7 @@ class App extends Component{
           <Switch>
             <Route path='/app/profile' component={()=><ProfilePage />} />
             <Route path='/app/recs' component={()=><AppPage add_like_video={this.add_like_video} />} />
-            <Route path='/app/matches' component={()=><MatchesPage />} />
+            <Route path='/app/matches' component={()=><MatchesPage like_videoes={this.state.like_videoes} />} />
           </Switch>
         </div>
       </BrowserRouter>
