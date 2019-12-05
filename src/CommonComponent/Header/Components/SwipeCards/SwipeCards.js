@@ -131,6 +131,12 @@ class SwipeCards extends Component{
     const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
     this.setState({ old_video: this.props.cards[0]})
   }
+  push_like_handler = () => {
+    this.swipe_right();
+  }
+  push_dislike_handler = () => {
+    this.swipe_left()
+  }
   render(){
     return(
       <div>
@@ -140,11 +146,10 @@ class SwipeCards extends Component{
             <div style={wrapperStyles}>
               <Swipeable
                 onSwipe={this.onSwipe_handler}
-                buttons={({left, right}) => (
-                  <div style={actionsStyles}>
-
-                  </div>
-                )}
+                buttons={({left, right}) => {
+                  this.swipe_left = left;
+                  this.swipe_right = right
+                }}
                 onAfterSwipe={this.remove}
               >
                 <div className="Swipe-card"><SwipeCard Video_title={this.props.cards[0].title} rating={this.props.cards[0].rating} img_src={this.props.cards[0].thumb}/></div>
@@ -157,9 +162,9 @@ class SwipeCards extends Component{
         </div>
         <div className="ControllButtons">
           <button className="Rewind-button SubButton" />
-          <button className="Dislike-button MainButton" />
+          <button onClick={this.push_dislike_handler} className="Dislike-button MainButton" />
           <button className="Superlike-button SubButton" />
-          <button className="Like-button MainButton" />
+          <button onClick={this.push_like_handler} className="Like-button MainButton" />
           <button className="Boost-button SubButton" />
         </div>
       </div>
