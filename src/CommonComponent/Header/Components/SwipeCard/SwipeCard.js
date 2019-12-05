@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import Good_icon from './Good_icon.png'
 
-import './Card.css'
+import './SwipeCard.css'
 
-class Card extends Component{
+class SwipeCard extends Component{
   render(){
     console.log(this.props.children)
     const image = this.props.img_src
@@ -21,4 +21,4 @@ class Card extends Component{
   }
 }
 
-export default Card;
+export default SwipeCard;
