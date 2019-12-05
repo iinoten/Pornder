@@ -1,5 +1,5 @@
 .ControllButtons {
-  position: absolute;
+  position: fixed;
   bottom: 3vh;
   width: 100vw;
 }

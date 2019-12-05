@@ -144,7 +144,6 @@ class App extends Component{
     if(this.state.swipe_count <= 2) {
       this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
-        console.log("SWIPE NEW DATA", this.state.swipe_count)
         const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
         axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
         .then((res) => {
