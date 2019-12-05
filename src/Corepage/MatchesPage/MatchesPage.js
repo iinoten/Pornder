@@ -26,7 +26,11 @@ class MatchesPage extends Component{
             </div>
             <div className="match-movies">
               <h5 className="matched-title">マッチした動画</h5>
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
+              {
+                this.props.like_videoes.map(item => (
+                  <Adding_Video head_img={item.thumb} title={item.title} views={item.views} ratign={item.rating}/>
+                ))
+              }
               <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
               <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
               <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
