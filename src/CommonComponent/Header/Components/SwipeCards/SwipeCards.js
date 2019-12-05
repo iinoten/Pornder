@@ -109,29 +109,7 @@ class SwipeCards extends Component{
   constructor(){
     super();
     this.state = {
-      cards: [
-        {
-          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
-          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
-          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
-          views: 969123,
-          rating: 61
-        },
-        {
-          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
-          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
-          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
-          views: 969123,
-          rating: 61
-        },
-        {
-          title: 'FUNNY PORN FAILS AND BLOOPERS COMPILATION #9',
-          video_url: 'https://www.pornhub.com/view_video.php?viewkey=ph590a10806acb3',
-          thumb: 'https://ci.phncdn.com/videos/201705/03/115247951/original/(m=e0YHGgaaaa)(mh=GWwTEvJ3PqgDp4ez)9.jpg',
-          views: 969123,
-          rating: 61
-        }
-      ]
+      cards: []
     }
   }
   remove = (e ) => {
@@ -164,6 +142,18 @@ class SwipeCards extends Component{
       this.add_like_video(now_swiping_cards)
     }
   }
+  componentDidMount() {
+    console.log("component didmountttttttttttt")
+    const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
+    axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
+      .then((res) => {
+        this.setState(prevState => {
+          let temp_card_array = prevState.cards;
+          return { cards: [res.data]}
+        })
+      })
+      .catch(err => console.log("えらーー", err))
+  }
   render(){
     return(
       <div>
@@ -183,7 +173,7 @@ class SwipeCards extends Component{
               </Swipeable>
             </div>
           ) : (
-            <div className="Swipe-card"><SwipeCard Video_title={"もうないです"}/></div>
+            <div className="Swipe-card"><SwipeCard Video_title={"次の動画を読み込んでいます"}/></div>
           )}
         </div>
         <div className="ControllButtons">
