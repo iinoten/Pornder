@@ -14,12 +14,12 @@ class Adding_Video extends Component{
       <div className="Adding_Video">
         <img className="Head-icon" src={this.props.head_img} style={{backgroundImage: `url(${image})`}} />
         <div className="Video-description">
-          <p className="Video-Title">Sexy Snapchat Girl</p>
+          <p className="Video-Title">{this.props.title}</p>
           {this.state.is_HD? <div className="HD-mark">HD</div>:null}
           <div>
-            <p className="Video-views">{183}K 再生数</p>
+            <p className="Video-views">{this.props.views}K 再生数</p>
             <p className="Good-icon"/>
-            <p className="Eval-rate">{80}%</p>
+            <p className="Eval-rate">{this.props.rating}%</p>
           </div>
         </div>
       </div>
