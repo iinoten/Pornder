@@ -16,6 +16,7 @@
   border-radius: 50%;
   border: none;
   box-shadow:0px 3px 4px 1px #000000;
+  outline: none;
 }
 .Config {
   background-image: url('./image/Setting_icon.png');
@@ -44,6 +45,7 @@
   background-position: center;
   box-shadow:0px 3px 4px 1px #000000;
   position: relative;
+  outline: none;
 }
 .Mini_mark {
   height: 20px;
@@ -70,6 +72,9 @@
 }
 .In_ProfilePage.Superlike-button {
   margin-left: 10%;
+}
+.Subbutton {
+  outline: none;
 }
 body, html {
 }
