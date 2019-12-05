@@ -136,14 +136,15 @@ class App extends Component{
             .catch(err => console.log("えらーー", err))
   }
   update_test_state = () => {
-    this.setState({swipe_count: this.state.swipe_count + 1})
     this.setState(prev_card => {
       let temp_cards =  prev_card.cards;
       temp_cards.shift();
       return {cards: temp_cards}
     })
-    if(this.state.swipe_count < 4) {
+    if(this.state.swipe_count <= 2) {
+      this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
+        console.log("SWIPE NEW DATA", this.state.swipe_count)
         const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
         axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
         .then((res) => {
@@ -155,7 +156,8 @@ class App extends Component{
         })
         .catch(err => console.log("えらーー", err))
       }
-      this.setState({swipe_count: 0})
+    } else {
+      this.setState({swipe_count: this.state.swipe_count - 1})
     }
   }
   change_menu = (type) => {
