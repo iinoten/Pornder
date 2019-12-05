@@ -22,7 +22,6 @@ class Header extends Component{
     this.props.change_menu_handler('matches')
   }
   render(){
-    console.log(this.props.menu_state)
     return(
       <div>
         <div  className="App-header">

@@ -117,7 +117,6 @@ class App extends Component{
   add_like_video = (video) => {
     this.setState(prevState => {
       let temp_video_state = prevState.like_videoes;
-      console.log(temp_video_state)
       temp_video_state.unshift(video);
       return {like_videoes: temp_video_state}
     })
@@ -131,7 +130,6 @@ class App extends Component{
               this.setState(prevState => {
                 let temp_card_array = prevState.cards;
                 temp_card_array.push(res.data)
-                console.log("set new data instate")
                 return { cards: temp_card_array}
               })
             })
@@ -152,7 +150,6 @@ class App extends Component{
           this.setState(prevState => {
             let temp_card_array = prevState.cards;
             temp_card_array.push(res.data)
-            console.log("set new data instate")
             return { cards: temp_card_array}
           })
         })
@@ -185,14 +182,12 @@ class App extends Component{
         this.setState(prevState => {
           let temp_card_array = prevState.cards;
           temp_card_array.push(res.data)
-          console.log("set new data instate")
           return { cards: temp_card_array}
         })
       })
       .catch(err => console.log("えらーー", err))
   }
   render(){
-    console.log("DDDDDDDDDDDDDDDDDDDDDDIIIIIIIIIIIIIIIIDDDDDDDDDDDDDDDDDDDDD", this.state.cards)
     return (
       <BrowserRouter>
         <div className='App'>

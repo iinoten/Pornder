@@ -114,7 +114,6 @@ class SwipeCards extends Component{
     }
   }
   remove = (e ) => {
-    console.log("now card is", this.state.now_card)
     this.setState({ now_card: this.state.cards[0] })
   }
   add_like_video = (video) => {
@@ -122,25 +121,17 @@ class SwipeCards extends Component{
   }
   onSwipe_handler = (e,card) => {
     this.props.update();
-    console.log("SWIPE")
-    let now_swiping_cards = this.props.cards;
     if (e==="right") {
-      console.log("like video of", this.state.old_video)
       this.add_like_video(this.state.old_video)
     }
   }
   componentWillReceiveProps(props){
-    console.log("new will props", props.cards)
   }
   componentDidMount() {
-    //this.props.update();
-    console.log("new props", this.props.cards)
-    console.log("component didmountttttttttttt")
     const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
     this.setState({ old_video: this.props.cards[0]})
   }
   render(){
-    console.log("new props",this.props.cards)
     return(
       <div>
         <div style={wrapperStyles}>
