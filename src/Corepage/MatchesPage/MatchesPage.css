@@ -37,6 +37,11 @@
 .item {
   /* 横スクロール用 */
   display: inline-block;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+        scrollbar-width: none; 
+}
+.Like-Persons::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+  display:none;
 }
 .horizontal-list {
   margin: 0;
@@ -52,6 +57,10 @@
   text-align: left;
   padding-left: 20px;
   margin: 10px 0;
+}
+.mijissou {
+  margin: 3px !important;
+  padding: 0 !important
 }
 
 .fade-exit {

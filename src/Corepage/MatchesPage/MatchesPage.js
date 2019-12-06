@@ -22,6 +22,7 @@ class MatchesPage extends Component{
                     <div className="Like-Persons"></div>
                   </li>
                 ))}
+              <h5 className="matched-title mijissou">ここは未実装です</h5>
               </ul>
             </div>
             <div className="match-movies">
