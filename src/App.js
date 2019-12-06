@@ -5,6 +5,7 @@ import Header from './CommonComponent/Header/Header';
 import ProfilePage from './Corepage/ProfilePage/ProfilePage';
 import MatchesPage from './Corepage/MatchesPage/MatchesPage';
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 import React, {Component} from 'react';
 
@@ -191,9 +192,10 @@ class App extends Component{
         break;
       default:
         break;
-    }
-    const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
-    axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
+
+      }
+      const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
+      axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
       .then((res) => {
         this.setState(prevState => {
           let temp_card_array = prevState.cards;
@@ -202,6 +204,20 @@ class App extends Component{
         })
       })
       .catch(err => console.log("えらーー", err))
+    const test_object = {
+      foo: 'baa',
+      hoge: 'huga',
+      ten: 1234
+    }
+    //Cookieからlikeしたやつをとってくる
+    if(Cookies.get().DEMO_like_videoes){
+      this.setState({
+        like_videoes: JSON.parse(Cookies.get().DEMO_like_videoes)
+      })
+    }
+  }
+  set_Like_videoes_Cookie = (videoes) => {
+    Cookies.set('DEMO_like_videoes', JSON.stringify([videoes, ...this.state.like_videoes]))
   }
   render(){
     return (
@@ -210,7 +226,7 @@ class App extends Component{
         <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
           <Switch>
             <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
-            <Route path='/app/recs' component={()=><AppPage popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
+            <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
             <Route path='/app/matches' component={()=><MatchesPage  like_videoes={this.state.like_videoes} />} />
           </Switch>
         </div>

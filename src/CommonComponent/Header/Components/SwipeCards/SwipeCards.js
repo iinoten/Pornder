@@ -24,6 +24,7 @@ class SwipeCards extends Component{
     this.props.update();
     if (e==="right") {
       this.add_like_video(this.state.old_video)
+      this.props.set_Like_videoes_Cookie(this.state.old_video);
     }
   }
   componentDidMount() {
