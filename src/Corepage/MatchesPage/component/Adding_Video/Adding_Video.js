@@ -6,7 +6,7 @@ class Adding_Video extends Component{
   constructor(){
     super();
     this.state = {
-      is_HD: true
+      is_HD: false
     }
   }
   render(){
@@ -17,7 +17,7 @@ class Adding_Video extends Component{
           <p className="Video-Title">{this.props.title}</p>
           {this.state.is_HD? <div className="HD-mark">HD</div>:null}
           <div>
-            <p className="Video-views">{this.props.views}K 再生数</p>
+            <p className="Video-views">{Math.floor(this.props.views/ 1000)}K 再生数</p>
             <p className="Good-icon"/>
             <p className="Eval-rate">{this.props.rating}%</p>
           </div>
