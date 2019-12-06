@@ -12,7 +12,7 @@ class Adding_Video extends Component{
   render(){
     return(
       <a target='_blank' rel="noopener noreferrer" href={this.props.url} className="Adding_Video">
-        <img className="Head-icon" src={this.props.head_img} style={{backgroundImage: `url(${image})`}} />
+        <img alt="えっちなアイコン" className="Head-icon" src={this.props.head_img} style={{backgroundImage: `url(${image})`}} />
         <div className="Video-description">
           <p className="Video-Title">{this.props.title}</p>
           {this.state.is_HD? <div className="HD-mark">HD</div>:null}
