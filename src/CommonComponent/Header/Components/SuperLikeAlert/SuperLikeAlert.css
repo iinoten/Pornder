@@ -36,3 +36,8 @@
 .yet_alert-text{
   text-align: center;
 }
+.yet_alert-subtext {
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+}
