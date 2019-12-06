@@ -32,11 +32,6 @@ class MatchesPage extends Component{
                   <Adding_Video head_img={item.thumb} title={item.title} views={item.views} ratign={item.rating}/>
                 ))
               }
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
-              <Adding_Video head_img={'https://ci.phncdn.com/videos/201910/31/258477242/original/(m=e0YHGgaaaa)(mh=SB6Y_qD6E4asab8I)3.jpg'} test="test"/>
             </div>
           </div>
         </CSSTransition>
