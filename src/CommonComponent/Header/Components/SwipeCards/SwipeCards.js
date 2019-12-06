@@ -31,10 +31,14 @@ class SwipeCards extends Component{
     this.setState({ old_video: this.props.cards[0]})
   }
   push_like_handler = () => {
-    this.swipe_right();
+    if( this.swipe_right ) {
+      this.swipe_right();
+    }
   }
   push_dislike_handler = () => {
-    this.swipe_left()
+    if( this.swipe_left ) {
+      this.swipe_left()
+    }
   }
   onPush_SuperLike_Button = () => {
     this.props.popup_yet_alert()
