@@ -12,6 +12,18 @@ import React, {Component} from 'react';
 
 import './App.css'
 
+import posed from 'react-pose'
+import SuperLikeAlert from './CommonComponent/Header/Components/SuperLikeAlert/SuperLikeAlert';
+
+const SuperLikeBox = posed.div({
+  open: {
+    top: '50%'
+  },
+  close: {
+    top: '-50%'
+  }
+})
+
 const all_video_genre = [
   'Japanese',
   'Mature',
@@ -111,7 +123,8 @@ class App extends Component{
       like_videoes: [],
       test_value: [1,2,3,4],
       cards: [],
-      swipe_count: 0
+      swipe_count: 0,
+      is_open_yet_Alert: false
     }
   }
   add_like_video = (video) => {
@@ -123,6 +136,9 @@ class App extends Component{
    //this.setState({like_videoes: this.state.like_videoes.concat(video)})
    this.update_test_state()
   }
+
+  popup_yet_alert = () => this.setState({ is_open_yet_Alert: true })
+
   first_update_state = () => {
     const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
           axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
@@ -195,10 +211,11 @@ class App extends Component{
         <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
           <Switch>
             <Route path='/app/profile' component={()=><ProfilePage />} />
-            <Route path='/app/recs' component={()=><AppPage update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
+            <Route path='/app/recs' component={()=><AppPage popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
             <Route path='/app/matches' component={()=><MatchesPage  like_videoes={this.state.like_videoes} />} />
           </Switch>
         </div>
+        <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert /></SuperLikeBox>
       </BrowserRouter>
     );
   }
