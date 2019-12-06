@@ -29,7 +29,7 @@ class MatchesPage extends Component{
               <h5 className="matched-title">マッチした動画</h5>
               {
                 this.props.like_videoes.map(item => (
-                  <Adding_Video head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
+                  <Adding_Video url={item.video_url} head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
                 ))
               }
             </div>
