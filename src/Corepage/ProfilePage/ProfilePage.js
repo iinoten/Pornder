@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 import './ProfilePage.css'
 
 class ProfilePage extends Component{
-  constructor() {
-    super();
-  }
   onPush_Boost_Button_handler = () => {
     this.props.popup_yet_alert()
   }

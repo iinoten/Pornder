@@ -3,12 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 import './Header.css'
 
-const SomeComponent = withRouter(props => <Header {...props}/>);
-
 class Header extends Component{
-  constructor(){
-    super();
-  }
   onPush_account_handler = () => {
     this.props.history.push('/app/profile')
     this.props.change_menu_handler('profile')

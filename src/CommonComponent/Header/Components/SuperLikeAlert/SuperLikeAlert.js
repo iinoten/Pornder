@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 import './SuperLikeAlert.css'
 
 class SuperLikeAlert extends Component{
-  constructor(){
-    super();
-  }
   componentDidMount(){
     document.addEventListener('mousedown', this.handleClickOutside);
   }

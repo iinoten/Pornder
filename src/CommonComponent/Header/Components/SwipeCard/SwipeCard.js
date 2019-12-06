@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Good_icon from './Good_icon.png'
 
 import './SwipeCard.css'
 

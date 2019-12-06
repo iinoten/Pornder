@@ -3,7 +3,6 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group'
 import './MatchesPage.css'
 import Adding_Video from './component/Adding_Video/Adding_Video';
 
-const test_data = [];
 const test_matches_persons = [1,2,3,4,5,6,7,8,9]
 class MatchesPage extends Component{
   render(){

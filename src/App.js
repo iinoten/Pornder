@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import MediaQuery from 'react-responsive';
-import { BrowserRouter, Route, Switch, withRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AppPage from './Corepage/AppPage/AppPage';
 import Header from './CommonComponent/Header/Header';
 import ProfilePage from './Corepage/ProfilePage/ProfilePage';
