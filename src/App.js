@@ -137,7 +137,8 @@ class App extends Component{
    this.update_test_state()
   }
 
-  popup_yet_alert = () => this.setState({ is_open_yet_Alert: true })
+  popup_yet_alert = () => this.setState({ is_open_yet_Alert: true });
+  popdown_yet_alert = () => this.setState({ is_open_yet_Alert: false });
 
   first_update_state = () => {
     const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
@@ -215,7 +216,7 @@ class App extends Component{
             <Route path='/app/matches' component={()=><MatchesPage  like_videoes={this.state.like_videoes} />} />
           </Switch>
         </div>
-        <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert /></SuperLikeBox>
+        <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert is_open={this.state.is_open_yet_Alert} popdown_yet_alert={this.popdown_yet_alert} /></SuperLikeBox>
       </BrowserRouter>
     );
   }

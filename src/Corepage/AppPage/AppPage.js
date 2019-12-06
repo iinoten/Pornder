@@ -11,10 +11,12 @@ import posed from 'react-pose'
 
 const SuperLikeBox = posed.div({
   open: {
-    top: '50%'
+    top: '50%',
+    opacity: 0
   },
   close: {
-    top: '-50%'
+    top: '-50%',
+    opacity: 1
   }
 })
 

@@ -125,10 +125,7 @@ class SwipeCards extends Component{
       this.add_like_video(this.state.old_video)
     }
   }
-  componentWillReceiveProps(props){
-  }
   componentDidMount() {
-    const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
     this.setState({ old_video: this.props.cards[0]})
   }
   push_like_handler = () => {
@@ -140,6 +137,13 @@ class SwipeCards extends Component{
   onPush_SuperLike_Button = () => {
     this.props.popup_yet_alert()
   }
+  onPush_Rewind_Button = () => {
+    this.props.popup_yet_alert()
+  }
+  onPush_Boost_Button = () => {
+    this.props.popup_yet_alert()
+  }
+  
   render(){
     return(
       <div>
@@ -164,11 +168,11 @@ class SwipeCards extends Component{
             ): <div className="Swipe-card"><SwipeCard Video_title={"次の動画を読み込んでいます"}/></div>}
         </div>
         <div className="ControllButtons">
-          <button className="Rewind-button SubButton" />
+          <button onClick={this.onPush_Rewind_Button} className="Rewind-button SubButton" />
           <button onClick={this.push_dislike_handler} className="Dislike-button MainButton" />
           <button onClick={this.onPush_SuperLike_Button} className="Superlike-button SubButton" />
           <button onClick={this.push_like_handler} className="Like-button MainButton" />
-          <button className="Boost-button SubButton" />
+          <button onClick={this.onPush_Boost_Button} className="Boost-button SubButton" />
         </div>
       </div>
     );

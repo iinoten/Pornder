@@ -1,6 +1,6 @@
 .SuperLikeAlert {
   width: 90vw;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   left: 50%;
   position: fixed;
   background-color: #424242;
