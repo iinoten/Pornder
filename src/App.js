@@ -211,7 +211,7 @@ class App extends Component{
         <div className='App'>
         <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
           <Switch>
-            <Route path='/app/profile' component={()=><ProfilePage />} />
+            <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
             <Route path='/app/recs' component={()=><AppPage popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
             <Route path='/app/matches' component={()=><MatchesPage  like_videoes={this.state.like_videoes} />} />
           </Switch>
