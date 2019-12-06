@@ -1,0 +1,37 @@
+.SuperLikeAlert {
+  width: 90vw;
+  transform: translateX(-50%);
+  left: 50%;
+  position: fixed;
+  background-color: #424242;
+  border-radius: 5px;
+  font-size: 17px;
+  color: #fff;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+.SuperLikeAlert-Icon {
+  z-index: 99;
+  background: url('./background.png');
+  border-radius: 50%;
+  box-shadow:0px 2px 6px 1px #000000;
+  width: 15vw;
+  height: 15vw;
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.gray_back {
+  background: url('./Question.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.yet_alert-text{
+  text-align: center;
+}

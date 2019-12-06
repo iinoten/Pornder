@@ -4,6 +4,9 @@
   background-color: #141414;
   padding-top: 46px;
 }
+.Superlike-button_Box {
+  position: fixed;
+}
 body, html {
   overflow: hidden;
 }

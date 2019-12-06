@@ -137,6 +137,9 @@ class SwipeCards extends Component{
   push_dislike_handler = () => {
     this.swipe_left()
   }
+  onPush_SuperLike_Button = () => {
+    this.props.popup_yet_alert()
+  }
   render(){
     return(
       <div>
@@ -163,7 +166,7 @@ class SwipeCards extends Component{
         <div className="ControllButtons">
           <button className="Rewind-button SubButton" />
           <button onClick={this.push_dislike_handler} className="Dislike-button MainButton" />
-          <button className="Superlike-button SubButton" />
+          <button onClick={this.onPush_SuperLike_Button} className="Superlike-button SubButton" />
           <button onClick={this.push_like_handler} className="Like-button MainButton" />
           <button className="Boost-button SubButton" />
         </div>
