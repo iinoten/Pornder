@@ -3,15 +3,6 @@ import React, {Component} from 'react';
 import './SwipeCard.css'
 
 class SwipeCard extends Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      image: null
-    }
-  }
-  componentWillReceiveProps(props){
-    this.setState({ image: <img className="Card_image" src={props.img_src} /> })
-  }
   render(){
     return(
       <div className="Card">
