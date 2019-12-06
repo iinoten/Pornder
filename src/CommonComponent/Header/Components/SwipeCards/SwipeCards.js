@@ -143,7 +143,7 @@ class SwipeCards extends Component{
   onPush_Boost_Button = () => {
     this.props.popup_yet_alert()
   }
-  
+
   render(){
     return(
       <div>
