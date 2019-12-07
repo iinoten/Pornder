@@ -16,4 +16,5 @@
 
 body, html {
   background-color: #141414;
+  touch-action: none;
 }
