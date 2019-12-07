@@ -27,8 +27,8 @@ class MatchesPage extends Component{
             <div className="match-movies">
               <h5 className="matched-title">マッチした動画</h5>
               {
-                this.props.like_videoes.map(item => (
-                  <Adding_Video url={item.video_url} head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
+                this.props.like_videoes.map((item, index) => (
+                  <Adding_Video onDelete={this.props.onDelete} video_index={index} url={item.video_url} head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
                 ))
               }
             </div>

@@ -219,6 +219,9 @@ class App extends Component{
   set_Like_videoes_Cookie = (videoes) => {
     Cookies.set('DEMO_like_videoes', JSON.stringify([videoes, ...this.state.like_videoes]))
   }
+  onDelete_video_handler = (index) => {
+    console.log('ondelete', index)
+  }
   render(){
     return (
       <BrowserRouter>
@@ -227,7 +230,7 @@ class App extends Component{
           <Switch>
             <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
             <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
-            <Route path='/app/matches' component={()=><MatchesPage  like_videoes={this.state.like_videoes} />} />
+            <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
           </Switch>
         </div>
         <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert is_open={this.state.is_open_yet_Alert} popdown_yet_alert={this.popdown_yet_alert} /></SuperLikeBox>

@@ -63,3 +63,17 @@
   margin-left: 5px;
   display: inline-block;
 }
+.Adding_video-Box {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 80px;
+  position: relative;
+}
+.Delete-Button {
+  position: absolute;
+  background-color: red;
+  height: 100%;
+  width: 40px;
+  top: 0px;
+  left: 100%;
+}
