@@ -220,7 +220,12 @@ class App extends Component{
     Cookies.set('DEMO_like_videoes', JSON.stringify([videoes, ...this.state.like_videoes]))
   }
   onDelete_video_handler = (index) => {
-    console.log('ondelete', index)
+    this.setState(prevState => {
+      let temp_state = prevState.like_videoes;
+      temp_state.splice(index, 1)
+      Cookies.set('DEMO_like_videoes', JSON.stringify(temp_state))
+      return {like_videoes: temp_state}
+    })
   }
   render(){
     return (
