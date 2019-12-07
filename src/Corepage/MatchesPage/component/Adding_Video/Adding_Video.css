@@ -71,7 +71,11 @@
 }
 .Delete-Button {
   position: absolute;
-  background-color: red;
+  background-image: url(./image/Delete.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-color: #424242;
   height: 100%;
   width: 40px;
   top: 0px;
