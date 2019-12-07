@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import MediaQuery from 'react-responsive';
 import AppPage from './Corepage/AppPage/AppPage';
 import Header from './CommonComponent/Header/Header';
 import ProfilePage from './Corepage/ProfilePage/ProfilePage';
@@ -14,6 +15,7 @@ import './App.css'
 import posed from 'react-pose'
 import SuperLikeAlert from './CommonComponent/Header/Components/SuperLikeAlert/SuperLikeAlert';
 import NotFound from './Corepage/NotFound/NotFound';
+import ForPC from './Corepage/ForPC/ForPC';
 
 const SuperLikeBox = posed.div({
   open: {
@@ -230,18 +232,25 @@ class App extends Component{
   }
   render(){
     return (
-      <BrowserRouter>
-        <div className='App'>
-        <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
-          <Switch>
-            <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
-            <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
-            <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-        <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert is_open={this.state.is_open_yet_Alert} popdown_yet_alert={this.popdown_yet_alert} /></SuperLikeBox>
-      </BrowserRouter>
+      <div>
+        <MediaQuery query="(max-width: 767px)">
+        <BrowserRouter>
+          <div className='App'>
+          <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
+            <Switch>
+              <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
+              <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
+              <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+          <SuperLikeBox is_open={this.state.is_open_yet_Alert} className="Superlike-button_Box" pose={this.state.is_open_yet_Alert?'open':'close'}><SuperLikeAlert is_open={this.state.is_open_yet_Alert} popdown_yet_alert={this.popdown_yet_alert} /></SuperLikeBox>
+        </BrowserRouter>
+        </MediaQuery>
+        <MediaQuery query="(min-width: 768px)">
+          <ForPC />
+        </MediaQuery>
+      </div>
     );
   }
 }
