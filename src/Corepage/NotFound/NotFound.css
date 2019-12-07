@@ -1,0 +1,15 @@
+.NotFound {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 9;
+  background-color: #151515;
+}
+.notfound-text {
+  margin-top: 40%;
+  color: #f6953e;
+  font-size: 5em;
+}
+.notfound-subtext {
+  color: #686868;
+}
