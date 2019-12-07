@@ -1,0 +1,21 @@
+.ForPC {
+  margin: 0;
+}
+.ForPC-Icon {
+  background-image: url(./Big_mark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 40vh;
+  width: 100vw;
+  margin-top: 10vh;
+}
+.ForPC-Text {
+  text-align: center;
+  color: #f6953e;
+  margin-top: 5vh;
+  font-weight: 200;
+}
+.ForPC-Text h4 {
+  font-weight: 200;
+}
