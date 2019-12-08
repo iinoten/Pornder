@@ -135,7 +135,7 @@ class App extends Component{
       return {like_videoes: temp_video_state}
     })
    //this.setState({like_videoes: this.state.like_videoes.concat(video)})
-   this.update_test_state()
+   this.update_cards_state()
   }
 
   popup_yet_alert = () => this.setState({ is_open_yet_Alert: true });
@@ -153,7 +153,7 @@ class App extends Component{
             })
             .catch(err => console.log("えらーー", err))
   }
-  update_test_state = () => {
+  update_cards_state = () => {
     this.setState(prev_card => {
       let temp_cards =  prev_card.cards;
       temp_cards.shift();
@@ -227,6 +227,12 @@ class App extends Component{
       tags: (Cookies.get('like_types') ? [...old_types.tags, ...videoes.types.tags] : videoes.types.tags)
     }
     Cookies.set('like_types', JSON.stringify(like_type))
+    let return_types = {};
+    for(var i=0;i< JSON.parse(Cookies.get('like_types')).categories.length;i++) {
+      let key = JSON.parse(Cookies.get('like_types')).categories[i];
+      return_types[key] = (return_types[key])? return_types[key] + 1 : 1 ;
+    }
+    console.log(return_types)
   }
   onDelete_video_handler = (index) => {
     this.setState(prevState => {
@@ -245,7 +251,7 @@ class App extends Component{
           <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
             <Switch>
               <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
-              <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_test_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
+              <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_cards_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
               <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
               <Route component={NotFound} />
             </Switch>
