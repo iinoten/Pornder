@@ -220,6 +220,13 @@ class App extends Component{
   }
   set_Like_videoes_Cookie = (videoes) => {
     Cookies.set('DEMO_like_videoes', JSON.stringify([videoes, ...this.state.like_videoes]))
+    let old_types = ( Cookies.get('like_types') ? JSON.parse(Cookies.get('like_types')) : null)
+    //let old_categories = (Cookies.get('like_types') ? JSON.parse(Cookies.get('like_types').categories : null)
+    let like_type = {
+      categories: (Cookies.get('like_types') ? [...old_types.categories, ...videoes.types.categories] : videoes.types.categories),
+      tags: (Cookies.get('like_types') ? [...old_types.tags, ...videoes.types.tags] : videoes.types.tags)
+    }
+    Cookies.set('like_types', JSON.stringify(like_type))
   }
   onDelete_video_handler = (index) => {
     this.setState(prevState => {
