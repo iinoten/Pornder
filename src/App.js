@@ -154,6 +154,7 @@ class App extends Component{
             .catch(err => console.log("えらーー", err))
   }
   update_cards_state = () => {
+
     this.setState(prev_card => {
       let temp_cards =  prev_card.cards;
       temp_cards.shift();
