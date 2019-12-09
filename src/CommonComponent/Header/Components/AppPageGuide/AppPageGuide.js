@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import posed from 'react-pose';
+import Cookies from 'js-cookie'
 import './AppPageGuide.css'
 
 const Box = posed.div({
@@ -20,14 +21,19 @@ const Box = posed.div({
 class AppPageGuide extends Component{
   constructor() {
     super();
-    this.state = {
-      is_popup: false
+    if(Cookies.get('DEMO_popup_Guide')){
+      this.state = {
+        is_popup: false
+      }
+    } else {
+      this.state = {
+        is_popup: true
+      }
     }
   }
-  componentDidMount () {
-    setInterval(()=>{
-      this.setState({ is_popup: !this.state.is_popup})
-    }, 1000)
+  onClick_OK_Button = () => {
+    Cookies.set('DEMO_popup_Guide', 1)
+    this.setState({is_popup: false})
   }
   render(){
     return(
@@ -50,7 +56,7 @@ class AppPageGuide extends Component{
               <h5 className='left-tap'><div className='AppPageGuide-if-dislike_Icon' /><span>DisLikeボタンをタップ</span></h5>
             </div>
           </div>
-          <div className='AppPageGuide-OK'>OK</div>
+          <div onClick={this.onClick_OK_Button} className='AppPageGuide-OK'>OK</div>
       </Box>
     );
   }
