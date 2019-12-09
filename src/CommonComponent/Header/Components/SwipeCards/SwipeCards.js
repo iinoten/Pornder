@@ -3,7 +3,6 @@ import Swipeable from "react-swipy"
 import './SwipeCards.css'
 import SwipeCard from '../SwipeCard/SwipeCard';
 
-
 const wrapperStyles = {position: "relative", width: "250px", height: "250px"};
 
 class SwipeCards extends Component{
@@ -11,10 +10,10 @@ class SwipeCards extends Component{
     super();
     this.state = {
       cards: [],
-      old_video: {}
+      old_video: {},
     }
   }
-  remove = (e ) => {
+  remove = (e) => {
     this.setState({ now_card: this.state.cards[0] })
   }
   add_like_video = (video) => {
@@ -31,11 +30,13 @@ class SwipeCards extends Component{
     this.setState({ old_video: this.props.cards[0]})
   }
   push_like_handler = () => {
+    window.navigator.vibrate(300)
     if( this.swipe_right ) {
       this.swipe_right();
     }
   }
   push_dislike_handler = () => {
+    window.navigator.vibrate([60,40,80])
     if( this.swipe_left ) {
       this.swipe_left()
     }
