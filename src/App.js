@@ -164,15 +164,45 @@ class App extends Component{
       this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
         const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
-        axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
-        .then((res) => {
-          this.setState(prevState => {
-            let temp_card_array = prevState.cards;
-            temp_card_array.push(res.data)
-            return { cards: temp_card_array}
+        if(Cookies.get('like_types')){
+          switch (Math.floor(Math.random() * 4)) {
+            case 0:
+              console.log("おすすめのやつを表示")
+              axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: JSON.parse(Cookies.get('like_types')).categories[Math.floor(Math.random() * JSON.parse(Cookies.get('like_types')).categories.length)]}})
+              .then((res) => {
+                this.setState(prevState => {
+                  let temp_card_array = prevState.cards;
+                  temp_card_array.push(res.data)
+                  return { cards: temp_card_array}
+                })
+              })
+              .catch(err => console.log("えらーー", err))
+              break;
+          
+            default:
+              console.log("おすすめのじゃないやつを表示");
+              axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
+              .then((res) => {
+                this.setState(prevState => {
+                  let temp_card_array = prevState.cards;
+                  temp_card_array.push(res.data)
+                  return { cards: temp_card_array}
+                })
+              })
+              .catch(err => console.log("えらーー", err))
+              break;
+          }
+        } else {
+          axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
+          .then((res) => {
+            this.setState(prevState => {
+              let temp_card_array = prevState.cards;
+              temp_card_array.push(res.data)
+              return { cards: temp_card_array}
+            })
           })
-        })
-        .catch(err => console.log("えらーー", err))
+          .catch(err => console.log("えらーー", err))
+        }
       }
     } else {
       this.setState({swipe_count: this.state.swipe_count - 1})
