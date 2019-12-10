@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import image from './image/lording_imge.png';
-import './Adding_Video.css'
+import './AddingVideo.css'
 
-class Adding_Video extends Component{
+class AddingVideo extends Component{
   constructor(){
     super();
     this.state = {
@@ -15,8 +15,8 @@ class Adding_Video extends Component{
   render(){
     console.log()
     return(
-      <div className="Adding_video-Box">
-        <a target='_blank' rel="noopener noreferrer" href={this.props.url} className="Adding_Video">
+      <div className="AddingVideo-Box">
+        <a target='_blank' rel="noopener noreferrer" href={this.props.url} className="AddingVideo">
           <img alt="えっちなアイコン" className="Head-icon" src={this.props.head_img} style={{backgroundImage: `url(${image})`}} />
           <div className="Video-description">
             <p className="Video-Title">{this.props.title.slice(0,25) + (this.props.title.slice(25) ? '...':'')}</p>
@@ -34,4 +34,4 @@ class Adding_Video extends Component{
   }
 }
 
-export default Adding_Video;
+export default AddingVideo;

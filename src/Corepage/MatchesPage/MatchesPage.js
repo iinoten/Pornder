@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
 import './MatchesPage.css'
-import Adding_Video from './component/Adding_Video/Adding_Video';
+import AddingVideo from './component/AddingVideo/AddingVideo';
 
 const test_matches_persons = [1,2,3,4,5,6,7,8,9]
 class MatchesPage extends Component{
@@ -28,7 +28,7 @@ class MatchesPage extends Component{
               <h5 className="matched-title">マッチした動画</h5>
               {
                 this.props.like_videoes.map((item, index) => (
-                  <Adding_Video onDelete={this.props.onDelete} video_index={index} url={item.video_url} head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
+                  <AddingVideo onDelete={this.props.onDelete} video_index={index} url={item.video_url} head_img={item.thumb} title={item.title} views={item.views} rating={item.rating}/>
                 ))
               }
             </div>
