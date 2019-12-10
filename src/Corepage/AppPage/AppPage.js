@@ -12,8 +12,6 @@ class AppPage extends Component{
   }
   componentDidMount() {
     this.setState({is_open_SuperLike_Alert: !this.state.is_open_SuperLike_Alert})
-    console.log("App page opened")
-
   }
   set_Like_videoes_Cookie = (video) => {
     this.props.set_Like_videoes_Cookie(video)
