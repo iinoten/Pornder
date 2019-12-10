@@ -237,11 +237,6 @@ class App extends Component{
         })
       })
       .catch(err => console.log("えらーー", err))
-    const test_object = {
-      foo: 'baa',
-      hoge: 'huga',
-      ten: 1234
-    }
     //Cookieからlikeしたやつをとってくる
     if(Cookies.get().DEMO_like_videoes){
       this.setState({
