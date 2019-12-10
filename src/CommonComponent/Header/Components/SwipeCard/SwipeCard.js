@@ -6,6 +6,7 @@ class SwipeCard extends Component{
   render(){
     return(
       <div className="Card">
+        {this.props.recomended?<span className="Recomended-tag"><h3>Recomended!</h3></span>:null}
         {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.props.img_src} />:null}
         <div className="Card-description">
           <h5 className="Video-title">{this.props.Video_title}</h5>
