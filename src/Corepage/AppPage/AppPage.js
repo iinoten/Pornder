@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './AppPage.css'
 import SwipeCards from '../../CommonComponent/Header/Components/SwipeCards/SwipeCards';
-import AppPageGuide from '../../CommonComponent/Header/Components/AppPageGuide/AppPageGuide';
+import AppPageGuide from '../../CommonComponent/Header/Components/RecomendedGuide/RecomendedGuide';
 
 class AppPage extends Component{
   constructor() {
