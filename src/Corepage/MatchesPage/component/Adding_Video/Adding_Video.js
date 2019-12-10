@@ -6,7 +6,7 @@ class AddingVideo extends Component{
   constructor(){
     super();
     this.state = {
-      is_HD: false,
+      is_HD: false
     }
   }
   onClick_Delete_Button_handler = () => {

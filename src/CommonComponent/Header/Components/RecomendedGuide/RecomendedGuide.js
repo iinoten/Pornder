@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import posed from 'react-pose';
-import Cookies from 'js-cookie'
+import Cookie from 'js-cookie'
 import './RecomendedGuide.css'
 
 const Box = posed.div({
@@ -27,13 +27,14 @@ class RecomendedGuide extends Component{
   }
   onClick_OK_Button = () => {
     this.setState({is_popup: false})
+    this.pop_down();
   }
-  componentDidMount() {
-    this.setState({is_popup: true})
+  pop_down = () => {
+    this.props.popdown()
   }
   render(){
     return(
-      <Box className='RecomendedGuide' pose={this.state.is_popup?'up':'down'}>
+      <Box className='RecomendedGuide' pose={this.props.open?'up':'down'}>
           <h1 className='RecomendedGuide-Title'>おめでとうございます！</h1>
           <h4 className='RecomendedGuide-description'><span>Pornder</span>をご利用くださりありがとうございます! あなたのライクを
             元におすすめの動画を表示できるようになりました。

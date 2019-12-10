@@ -154,7 +154,6 @@ class App extends Component{
             .catch(err => console.log("えらーー", err))
   }
   update_cards_state = () => {
-
     this.setState(prev_card => {
       let temp_cards =  prev_card.cards;
       temp_cards.shift();
@@ -164,7 +163,7 @@ class App extends Component{
       this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
         const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
-        if(Cookies.get('like_types') && (JSON.parse(Cookies.get('like_types')).categories.length > 100)){
+        if(Cookies.get('like_types') && (JSON.parse(Cookies.get('like_types')).categories.length > 80)){
           switch (Math.floor(Math.random() * 4)) {
             case 0:
               axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: JSON.parse(Cookies.get('like_types')).categories[Math.floor(Math.random() * JSON.parse(Cookies.get('like_types')).categories.length)]}})
