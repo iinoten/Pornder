@@ -167,12 +167,13 @@ class App extends Component{
         if(Cookies.get('like_types')){
           switch (Math.floor(Math.random() * 4)) {
             case 0:
-              console.log("おすすめのやつを表示")
               axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: JSON.parse(Cookies.get('like_types')).categories[Math.floor(Math.random() * JSON.parse(Cookies.get('like_types')).categories.length)]}})
               .then((res) => {
                 this.setState(prevState => {
                   let temp_card_array = prevState.cards;
-                  temp_card_array.push(res.data)
+                  let temp_card_data = res.data;
+                  temp_card_data.recomended = true;
+                  temp_card_array.push(temp_card_data)
                   return { cards: temp_card_array}
                 })
               })
@@ -180,7 +181,6 @@ class App extends Component{
               break;
           
             default:
-              console.log("おすすめのじゃないやつを表示");
               axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
               .then((res) => {
                 this.setState(prevState => {
@@ -263,7 +263,6 @@ class App extends Component{
       let key = JSON.parse(Cookies.get('like_types')).categories[i];
       return_types[key] = (return_types[key])? return_types[key] + 1 : 1 ;
     }
-    console.log(return_types)
   }
   onDelete_video_handler = (index) => {
     this.setState(prevState => {
