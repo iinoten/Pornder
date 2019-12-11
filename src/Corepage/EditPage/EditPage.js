@@ -123,17 +123,17 @@ class EditPage extends Component{
             <tbody>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i<=2) return <td className='EditPage-recomended_category'>{item}</td>
+                  if(i<=2) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i>=3&&i<=5) return <td className='EditPage-recomended_category'>{item}</td>
+                  if(i>=3&&i<=5) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i>=6&&i<=8) return <td className='EditPage-recomended_category'>{item}</td>
+                  if(i>=6&&i<=8) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
             </tbody>
