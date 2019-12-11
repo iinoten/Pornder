@@ -30,21 +30,21 @@ class EditPage extends Component{
         </div>
         <div className='EditPage-recomended-categories'>
           <h4 className='EditPage_Description'>これが今、あなたにオススメしているカテゴリです</h4>
-          <table>
+          <table className='EditPage-recomended_category-table'>
             <tbody>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i<=2) return <td>{item}</td>
+                  if(i<=2) return <td className='EditPage-recomended_category'>{item}</td>
                 })}
               </tr>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i>=3&&i<=5) return <td>{item}</td>
+                  if(i>=3&&i<=5) return <td className='EditPage-recomended_category'>{item}</td>
                 })}
               </tr>
               <tr>
                 {recomended_categories.map((item, i) => {
-                  if(i>=6&&i<=8) return <td>{item}</td>
+                  if(i>=6&&i<=8) return <td className='EditPage-recomended_category'>{item}</td>
                 })}
               </tr>
             </tbody>

@@ -35,3 +35,17 @@
   font-size: 13px;
   color: #888888;
 }
+.EditPage-recomended_category-table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+.EditPage-recomended_category{
+  background-color: #424242;
+  width: 30vw;
+  height: 42vw;
+  border-spacing: 3px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 1.3em;
+  border-radius: 10px;
+}
