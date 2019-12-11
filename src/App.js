@@ -16,6 +16,7 @@ import posed from 'react-pose'
 import SuperLikeAlert from './CommonComponent/Header/Components/SuperLikeAlert/SuperLikeAlert';
 import NotFound from './Corepage/NotFound/NotFound';
 import ForPC from './Corepage/ForPC/ForPC';
+import EditPage from './Corepage/EditPage/EditPage';
 
 const SuperLikeBox = posed.div({
   open: {
@@ -125,7 +126,8 @@ class App extends Component{
       test_value: [1,2,3,4],
       cards: [],
       swipe_count: 0,
-      is_open_yet_Alert: false
+      is_open_yet_Alert: false,
+      is_header: true
     }
   }
   add_like_video = (video) => {
@@ -137,7 +139,12 @@ class App extends Component{
    //this.setState({like_videoes: this.state.like_videoes.concat(video)})
    this.update_cards_state()
   }
-
+  set_header = () => {
+    this.setState({is_header: true})
+  }
+  remove_header = () => {
+    this.setState({is_header: false})
+  }
   popup_yet_alert = () => this.setState({ is_open_yet_Alert: true });
   popdown_yet_alert = () => this.setState({ is_open_yet_Alert: false });
 
@@ -222,6 +229,9 @@ class App extends Component{
       case '/app/matches':
         this.setState({ menu_state: 'matches' })
         break;
+      case '/app/profile/edit':
+        this.setState({ is_header: false })
+        break
       default:
         break;
 
@@ -280,9 +290,10 @@ class App extends Component{
         <MediaQuery query="(max-width: 767px)">
         <BrowserRouter>
           <div className='App'>
-          <Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>
+          {this.state.is_header?<Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>:null}
             <Switch>
-              <Route path='/app/profile' component={()=><ProfilePage popup_yet_alert={this.popup_yet_alert} />} />
+              <Route path='/app/profile' exact component={()=><ProfilePage removeHeader={this.remove_header} popup_yet_alert={this.popup_yet_alert} />} />
+                <Route path='/app/profile/edit' component={()=><EditPage setHeader={this.set_header}  />} />
               <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_cards_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
               <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
               <Route component={NotFound} />

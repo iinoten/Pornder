@@ -1,0 +1,30 @@
+.EditPage {
+  background-color: #F5F7FA;
+  height: 100vh;
+}
+
+.EditPage-Header {
+  position: relative;
+  top: 0;
+  background: #141414;
+  width: 100vw;
+  height: 46px;
+}
+.EditPage-Header_Title {
+  color: #fff;
+  border: none;
+  height: 100%;
+  line-height: 38px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.EditPage-Header_backbutton {
+  background-color: #141414;
+  border: none;
+  color: #f6953e;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
