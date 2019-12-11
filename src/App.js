@@ -163,7 +163,7 @@ class App extends Component{
       this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
         const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
-        if(Cookies.get('like_types') && (JSON.parse(Cookies.get('like_types')).categories.length > 60)){
+        if(Cookies.get('like_types') && (JSON.parse(Cookies.get('like_types')).categories.length > 30)){
           switch (Math.floor(Math.random() * 4)) {
             case 0:
               axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: JSON.parse(Cookies.get('like_types')).categories[Math.floor(Math.random() * JSON.parse(Cookies.get('like_types')).categories.length)]}})
@@ -252,10 +252,10 @@ class App extends Component{
       tags: (Cookies.get('like_types') ? [...old_types.tags, ...videoes.types.tags] : videoes.types.tags)
     }
     if(old_types) {
-      if(like_type.categories.length > 80) {
+      if(like_type.categories.length > 35) {
         like_type.categories.splice(0, videoes.types.categories.length)
       }
-      if(like_type.tags.length > 50) {
+      if(like_type.tags.length > 10) {
         old_types.tags.splice(0, videoes.types.length)
       }
     }
