@@ -119,7 +119,7 @@ class SettingPage extends Component{
     return(
       <div className='SettingPage'>
         <div className='SettingPage-Header'>
-          <div className='SettingPage-Header_Title'>情報の編集</div>
+          <div className='SettingPage-Header_Title'>設定</div>
           <button className='SettingPage-Header_backbutton' onClick={this.onPush_Done_button_handler}>完了</button>
         </div>
        
