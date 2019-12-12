@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router';
 import './EditPage.css'
+import Cookie from 'js-cookie';
 
 const recomended_categories = [
   'japanese',
@@ -109,6 +110,30 @@ class EditPage extends Component{
   onPush_Done_button_handler = () => {
     this.props.setHeader()
     this.props.history.push('/app/profile')
+  }
+  count_categories_array = () => {
+    let categories_array = JSON.parse(Cookie.get('like_types')).categories;
+    let dict = {};
+    for(let key of categories_array){
+        dict[key] = categories_array.filter((x)=>{return x==key}).length;
+    }
+    let dict_array = [{public: 1}]
+    for (let key in dict) {
+      if(dict_array[0]) { 
+        dict_array[0][Object.keys(dict_array[0])] <= dict[key] ? dict_array.unshift({[key]: dict[key]}) : dict_array.push({[key]: dict[key]})
+      } else {
+        dict_array.push({[key]: dict[key]})
+      }
+    }
+    /*
+    Object.keys(dict).forEach((key)=>{
+      dict_array.push({[key]: dict[key]})
+    })
+    */
+    return dict_array;
+  }
+  componentDidMount(){
+    console.log(this.count_categories_array())
   }
   render(){
     return(
