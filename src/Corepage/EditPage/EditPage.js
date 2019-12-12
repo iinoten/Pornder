@@ -27,7 +27,7 @@ const translate_category_name = {
   'big-tits': '巨乳',
   'popular-with-women': '女性に人気',
   'verifined-models': '公式モデル',
-  '60FPS': '高品質動画',
+  '60fps-1': '高品質動画',
   'arab': 'アラブ系',
   'asian': 'アジア系',
   'BBW': 'デブ専',
