@@ -30,24 +30,3 @@
   font-size: 15px;
   font-weight: bold;
 }
-.SettingPage-recomended-categories {
-  margin-top: 60px;
-}
-.SettingPage_Description {
-  font-size: 13px;
-  color: #888888;
-}
-.SettingPage-recomended_category-table {
-  border-collapse: separate;
-  border-spacing: 10px;
-}
-.SettingPage-recomended_category{
-  background-color: #424242;
-  width: 30vw;
-  height: 42vw;
-  border-spacing: 3px;
-  color: #FFF;
-  font-weight: bold;
-  font-size: 1.3em;
-  border-radius: 10px;
-}
