@@ -172,6 +172,7 @@ class EditPage extends Component{
               </tr>
             </tbody>
           </table>
+          <h4 className='EditPage_Description'>今後おすすめのカテゴリを<br />選択、編集できるようになります</h4>
         </div>
       </div>
     );

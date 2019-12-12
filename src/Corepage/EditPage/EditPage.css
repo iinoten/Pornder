@@ -1,6 +1,7 @@
 .EditPage {
   background-color: #F5F7FA;
   height: 100vh;
+  overflow: scroll !important;
 }
 
 .EditPage-Header {
