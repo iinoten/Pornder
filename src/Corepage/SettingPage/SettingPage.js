@@ -115,35 +115,6 @@ class SettingPage extends Component{
     this.props.setHeader()
     this.props.history.push('/app/profile')
   }
-  count_categories_array = () => {
-    let categories_array = JSON.parse(Cookie.get('like_types')).categories;
-    let dict = {};
-    for(let key of categories_array){
-        dict[key] = categories_array.filter((x)=>{return x==key}).length;
-    }
-    let dict_array = [{public: 1}]
-    for (let key in dict) {
-      if(dict_array[0]) { 
-        dict_array[0][Object.keys(dict_array[0])] <= dict[key] ? dict_array.unshift({[key]: dict[key]}) : dict_array.push({[key]: dict[key]})
-      } else {
-        dict_array.push({[key]: dict[key]})
-      }
-    }
-    /*
-    Object.keys(dict).forEach((key)=>{
-      dict_array.push({[key]: dict[key]})
-    })
-    */
-   let return_categories = []
-   for (let i = 0; i < dict_array.length; i++) {
-     return_categories.unshift(Object.keys(dict_array[i])[0])
-   }
-    return return_categories.splice(0,9);
-  }
-  componentDidMount(){
-    console.log(this.count_categories_array())
-    this.setState({recomended_categories: this.count_categories_array()})
-  }
   render(){
     return(
       <div className='SettingPage'>
@@ -151,29 +122,7 @@ class SettingPage extends Component{
           <div className='SettingPage-Header_Title'>情報の編集</div>
           <button className='SettingPage-Header_backbutton' onClick={this.onPush_Done_button_handler}>完了</button>
         </div>
-        <div className='SettingPage-recomended-categories'>
-          <h4 className='SettingPage_Description'>これが今、あなたにオススメしているカテゴリです</h4>
-          <table className='SettingPage-recomended_category-table'>
-            <tbody>
-              <tr>
-                {this.state.recomended_categories.map((item, i) => {
-                  if(i<=2) return <td className='SettingPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
-                })}
-              </tr>
-              <tr>
-                {this.state.recomended_categories.map((item, i) => {
-                  if(i>=3&&i<=5) return <td className='SettingPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
-                })}
-              </tr>
-              <tr>
-                {this.state.recomended_categories.map((item, i) => {
-                  if(i>=6&&i<=8) return <td className='SettingPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
-                })}
-              </tr>
-            </tbody>
-          </table>
-          <h4 className='SettingPage_Description'>今後おすすめのカテゴリを<br />選択、編集できるようになります</h4>
-        </div>
+       
       </div>
     );
   }
