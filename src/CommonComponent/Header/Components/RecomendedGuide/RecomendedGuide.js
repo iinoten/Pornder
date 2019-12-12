@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import posed from 'react-pose';
-import Cookie from 'js-cookie'
 import './RecomendedGuide.css'
 
 const Box = posed.div({

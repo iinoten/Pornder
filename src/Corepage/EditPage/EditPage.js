@@ -3,17 +3,6 @@ import {withRouter} from 'react-router';
 import './EditPage.css'
 import Cookie from 'js-cookie';
 
-const recomended_categories = [
-  'japanese',
-  'mature',
-  'anal',
-  'babe',
-  'amateur',
-  'threesome',
-  'MLF',
-  'lesbian'
-]
-
 const translate_category_name = {
   'japanese': '日本人',
   'mature': '熟女',
@@ -23,7 +12,6 @@ const translate_category_name = {
   'threesome': '3P',
   'MLF': '中年女性',
   'lesbian': 'レズ',
-  'teen': '十代',
   'big-tits': '巨乳',
   'popular-with-women': '女性に人気',
   'verifined-models': '公式モデル',
@@ -119,7 +107,7 @@ class EditPage extends Component{
     let categories_array = JSON.parse(Cookie.get('like_types')).categories;
     let dict = {};
     for(let key of categories_array){
-        dict[key] = categories_array.filter((x)=>{return x==key}).length;
+        dict[key] = categories_array.filter((x)=>{return x===key}).length;
     }
     let dict_array = [{public: 1}]
     for (let key in dict) {
