@@ -9,8 +9,9 @@ class ProfilePage extends Component{
   onPush_SuperLike_Button_handler = () => {
     this.props.popup_yet_alert();
   }
-  onPush_YET_setting_button = () => {
-    this.props.popup_yet_alert();
+  onPush_setting_button = () => {
+    this.props.history.push('/app/settings')
+    this.props.removeHeader()
   }
   onPush_edit_button = () => {
     this.props.history.push('/app/profile/edit')
@@ -21,7 +22,7 @@ class ProfilePage extends Component{
       <div className="ProfilePage">
         <div className="Main-icon" />
         <div className="Setting_buttons">
-          <button onClick={this.onPush_YET_setting_button} className="EditButton Config" />
+          <button onClick={this.onPush_setting_button} className="EditButton Config" />
           <button onClick={this.onPush_edit_button} className="EditButton Info" />
         </div>
         <div><button className="Add-clip-Button"><div className="Mini_mark"/></button></div>

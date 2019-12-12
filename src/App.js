@@ -17,6 +17,7 @@ import SuperLikeAlert from './CommonComponent/Header/Components/SuperLikeAlert/S
 import NotFound from './Corepage/NotFound/NotFound';
 import ForPC from './Corepage/ForPC/ForPC';
 import EditPage from './Corepage/EditPage/EditPage';
+import SettingPage from './Corepage/SettingPage/SettingPage';
 
 const SuperLikeBox = posed.div({
   open: {
@@ -294,6 +295,7 @@ class App extends Component{
             <Switch>
               <Route path='/app/profile' exact component={()=><ProfilePage removeHeader={this.remove_header} popup_yet_alert={this.popup_yet_alert} />} />
                 <Route path='/app/profile/edit' component={()=><EditPage setHeader={this.set_header}  />} />
+                <Route path='/app/settings' component={()=><SettingPage setHeader={this.set_header}  />} />
               <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_cards_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
               <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
               <Route component={NotFound} />
