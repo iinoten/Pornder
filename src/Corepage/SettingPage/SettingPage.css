@@ -30,3 +30,40 @@
   font-size: 15px;
   font-weight: bold;
 }
+.SettingPage_Subscription_Banner {
+  margin-top: 25px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: #fff;
+  margin-left: 5vw;
+  width: 90vw;
+  height: 27vw;
+  background-color: #424242;
+}
+.SettingPage_Subscription_Banner h4 {
+  position: relative;
+  top: 10px;
+  margin-top: 5px;
+}
+.SettingPage_Subscription_Banner h4 .title-der {
+  color: #424242;
+  background-color: #f6953e;
+  padding: 2px;
+  margin-left: 4px;
+}
+.SettingPage_Subscription_Banner h4 .Fire-icon {
+  background-image: url(./Fire.png);
+  width: 30px; height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 3px;
+  position: relative;
+  top: 3px;
+}
+
+.SettingPage_Subscription_Banner h5 {
+  color: #999999;
+  font-size: 14px;
+  margin-top: -10px;
+}

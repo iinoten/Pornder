@@ -122,6 +122,10 @@ class SettingPage extends Component{
           <div className='SettingPage-Header_Title'>設定</div>
           <button className='SettingPage-Header_backbutton' onClick={this.onPush_Done_button_handler}>完了</button>
         </div>
+        <div className='SettingPage_Subscription_Banner'>
+          <h4><div className='Fire-icon'/>porn<span className='title-der'>der</span></h4>
+          <h5>サブスクリプションなんてありません</h5>
+        </div>
        
       </div>
     );
