@@ -106,6 +106,9 @@ const translate_category_name = {
 class EditPage extends Component{
   constructor(){
     super();
+    this.state = {
+      recomended_categories: []
+    }
   }
   onPush_Done_button_handler = () => {
     this.props.setHeader()
@@ -130,10 +133,15 @@ class EditPage extends Component{
       dict_array.push({[key]: dict[key]})
     })
     */
-    return dict_array;
+   let return_categories = []
+   for (let i = 0; i < dict_array.length; i++) {
+     return_categories.unshift(Object.keys(dict_array[i])[0])
+   }
+    return return_categories.splice(0,9);
   }
   componentDidMount(){
     console.log(this.count_categories_array())
+    this.setState({recomended_categories: this.count_categories_array()})
   }
   render(){
     return(
@@ -147,17 +155,17 @@ class EditPage extends Component{
           <table className='EditPage-recomended_category-table'>
             <tbody>
               <tr>
-                {recomended_categories.map((item, i) => {
+                {this.state.recomended_categories.map((item, i) => {
                   if(i<=2) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
               <tr>
-                {recomended_categories.map((item, i) => {
+                {this.state.recomended_categories.map((item, i) => {
                   if(i>=3&&i<=5) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
               <tr>
-                {recomended_categories.map((item, i) => {
+                {this.state.recomended_categories.map((item, i) => {
                   if(i>=6&&i<=8) return <td className='EditPage-recomended_category'>{translate_category_name[item]?translate_category_name[item]:item}</td>
                 })}
               </tr>
