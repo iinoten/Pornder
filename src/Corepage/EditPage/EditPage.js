@@ -91,7 +91,7 @@ const translate_category_name = {
   'sfw': '仕事中でも見れる',
   'smallTits': '貧乳',
   'smoking': '喫煙',
-  'solo female': '一人プレイ',
+  'solo-female': '一人プレイ',
   'squirt': '潮吹き',
   'strap-on': 'ペニバン',
   'striptease': 'ストリップ',
@@ -100,7 +100,8 @@ const translate_category_name = {
   'toys': '玩具プレイ',
   'transgender': 'トランスジェンダー',
   'vintage': 'ビンテージ映像',
-  'webcam': 'ウェブカメラ'
+  'webcam': 'ウェブカメラ',
+  'female-orgasm': '女性の絶頂'
 }
 
 class EditPage extends Component{
