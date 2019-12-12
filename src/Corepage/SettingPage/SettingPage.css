@@ -1,7 +1,9 @@
 .SettingPage {
   background-color: #F5F7FA;
   height: 100vh;
-  overflow: scroll;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden
 }
 
 .SettingPage-Header {
@@ -190,4 +192,21 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+
+.SettingPage-Footer {
+  margin-top: 60px;
+}
+.SettingPage-Footer_image {
+  height: 60px;
+  width: 100vw;
+  background-image: url(./Fire.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25px 25px;
+}
+.SettingPage-Footer_Version {
+  color: #686868;
+  margin-bottom: 20px;
 }
