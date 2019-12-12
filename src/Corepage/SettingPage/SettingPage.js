@@ -140,7 +140,7 @@ class SettingPage extends Component{
             <h4>コミュニティ</h4>
             <div className='SettingPage-Menu'>
               <div className='SettingPage-Menu-Wording'><a rel="noopener noreferrer" href='https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%8A%E3%83%8B%E3%83%BC' target='__blank'>安全に使うためのコツ</a><div className='SettingPage-Menu_Popup-Icon'/></div>
-              <div className='SettingPage-Menu-Wording'><a rel="noopener noreferrer" href='https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%8A%E3%83%8B%E3%83%BC' target='__blank'>pornder プライバシーポリシー</a><div className='SettingPage-Menu_Popup-Icon'/></div>
+              <div className='SettingPage-Menu-Wording'><a rel="noopener noreferrer" href='https://note.com/ntenten_q/n/nf54258a87c36' target='__blank'>pornder プライバシーポリシー</a><div className='SettingPage-Menu_Popup-Icon'/></div>
               <div className='SettingPage-Menu-Wording'><a rel="noopener noreferrer" href='https://jp.pornhub.com/information#terms' target='__blank'>pornhub 利用規約</a><div className='SettingPage-Menu_Popup-Icon'/></div>
             </div>
             <div className='SettingPage-Footer'>
