@@ -126,7 +126,17 @@ class SettingPage extends Component{
           <h4><div className='Fire-icon'/>porn<span className='title-der'>der</span></h4>
           <h5>サブスクリプションなんてありません</h5>
         </div>
-       
+        <div className='SettingPage-moreTools'>
+          <div className="SettingPage-SuperLike">
+            <div className="SettingPage-SuperLike-Icon" />
+            <h4 className="SettingPage-SuperLike-text">残り <span>∞</span></h4>
+          </div>
+          <div className="SettingPage-Boost">
+            <div className="SettingPage-Boost-Icon" />
+            <h4 className="SettingPage-Boost-text">残り <span>∞</span></h4>
+          </div>
+
+        </div>
       </div>
     );
   }

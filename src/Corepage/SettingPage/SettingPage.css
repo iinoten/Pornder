@@ -10,6 +10,7 @@
   background: #141414;
   width: 100vw;
   height: 46px;
+  box-shadow:0px 5px 10px -2px #050505;
 }
 .SettingPage-Header_Title {
   color: #fff;
@@ -30,7 +31,9 @@
   font-size: 15px;
   font-weight: bold;
 }
+
 .SettingPage_Subscription_Banner {
+  box-shadow:0px 5px 10px -2px #050505;
   margin-top: 25px;
   border-radius: 5px;
   font-size: 25px;
@@ -66,4 +69,80 @@
   color: #999999;
   font-size: 14px;
   margin-top: -10px;
+}
+
+.SettingPage-moreTools {
+  flex-direction: row;
+  margin-left: 5vw;
+}
+
+.SettingPage-SuperLike {
+  box-shadow:0px 5px 10px -2px #050505;
+  float: left;
+  display: block;
+  margin-left: 0vw;
+  border-radius: 5px;
+  background-color: #424242;
+  height:30vw; width: 44vw;
+  position: relative;
+  margin-top: 10vw;
+  padding-top: 20px;
+}
+.SettingPage-SuperLike-Icon {
+  transform: translateX(-50%);
+  height: 13vw; width: 13vw;
+  position: absolute;
+  top: -6vw;
+  left: 50%;
+  border-radius: 50%;
+  background-image: url(./Superlike.png);
+  background-repeat: no-repeat;
+  background-color: #424242;
+  background-position: center;
+  background-size: 55% 55%;
+  box-shadow:0px 2px 6px 1px #000000;
+}
+.SettingPage-SuperLike-text {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 15px;
+}
+.SettingPage-SuperLike-text span {
+  font-size: 25px;
+}
+
+
+.SettingPage-Boost {
+  box-shadow:0px 5px 10px -2px #050505;
+  float: right;
+  display: block;
+  margin-right: 5vw;
+  border-radius: 5px;
+  background-color: #424242;
+  height:30vw; width: 44vw;
+  position: relative;
+  margin-top: 10vw;
+  padding-top: 20px;
+}
+.SettingPage-Boost-Icon {
+  transform: translateX(-50%);
+  height: 13vw; width: 13vw;
+  position: absolute;
+  top: -6vw;
+  left: 50%;
+  border-radius: 50%;
+  background-image: url(./Boost.png);
+  background-repeat: no-repeat;
+  background-color: #424242;
+  background-position: center;
+  background-size: 55% 55%;
+  box-shadow:0px 2px 6px 1px #000000;
+}
+.SettingPage-Boost-text {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 15px;
+}
+.SettingPage-Boost-text span {
+  font-size: 25px;
 }
