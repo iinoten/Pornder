@@ -233,6 +233,9 @@ class App extends Component{
       case '/app/profile/edit':
         this.setState({ is_header: false })
         break
+      case '/app/settings':
+        this.setState({ is_header: false })
+        break
       default:
         break;
 

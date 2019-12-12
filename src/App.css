@@ -17,4 +17,6 @@
 body, html {
   background-color: #141414;
   touch-action: none;
+  width: 100vw;
+  overflow: hidden;
 }
