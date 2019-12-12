@@ -1,17 +1,17 @@
-.EditPage {
+.SettingPage {
   background-color: #F5F7FA;
   height: 100vh;
   overflow: scroll !important;
 }
 
-.EditPage-Header {
+.SettingPage-Header {
   position: relative;
   top: 0;
   background: #141414;
   width: 100vw;
   height: 46px;
 }
-.EditPage-Header_Title {
+.SettingPage-Header_Title {
   color: #fff;
   border: none;
   height: 100%;
@@ -19,7 +19,7 @@
   font-size: 18px;
   font-weight: bold;
 }
-.EditPage-Header_backbutton {
+.SettingPage-Header_backbutton {
   outline: none;
   background-color: #141414;
   border: none;
@@ -30,18 +30,18 @@
   font-size: 15px;
   font-weight: bold;
 }
-.EditPage-recomended-categories {
+.SettingPage-recomended-categories {
   margin-top: 60px;
 }
-.EditPage_Description {
+.SettingPage_Description {
   font-size: 13px;
   color: #888888;
 }
-.EditPage-recomended_category-table {
+.SettingPage-recomended_category-table {
   border-collapse: separate;
   border-spacing: 10px;
 }
-.EditPage-recomended_category{
+.SettingPage-recomended_category{
   background-color: #424242;
   width: 30vw;
   height: 42vw;
