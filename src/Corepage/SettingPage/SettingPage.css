@@ -1,7 +1,7 @@
 .SettingPage {
   background-color: #F5F7FA;
   height: 100vh;
-  overflow: scroll !important;
+  overflow: scroll;
 }
 
 .SettingPage-Header {
@@ -145,4 +145,49 @@
 }
 .SettingPage-Boost-text span {
   font-size: 25px;
+}
+
+.SettingPage_Comunity-Guide {
+  float: right;
+  width: 100vw;
+  margin-top: 20px;
+}
+.SettingPage_Comunity-Guide h4 {
+  color: #888888;
+  text-align: left;
+  margin-left: 5vw;
+  margin-bottom: 10px;
+}
+
+.SettingPage-Menu {
+  background: #424242;
+  width: 100%;
+}
+.SettingPage-Menu .SettingPage-Menu-Wording {
+  text-align: left;
+  padding: 15px 0;
+  border-bottom: solid 1px #6F6F6F;
+  position: relative;
+}
+.SettingPage-Menu .SettingPage-Menu-Wording a {
+  margin-left: 5vw;
+  height: 100%; width: 100%;
+  display: block;
+  color: #A19F9F;
+  border: none;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+.SettingPage-Menu_Popup-Icon {
+  position: absolute;
+  bottom: 50%;
+  right: 10px;
+  transform: translateY(50%);
+  display: inline-block;
+  height: 17px; width: 17px;
+  background-image: url(./Popup.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
