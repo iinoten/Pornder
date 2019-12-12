@@ -101,7 +101,7 @@ const translate_category_name = {
   'transgender': 'トランスジェンダー',
   'vintage': 'ビンテージ映像',
   'webcam': 'ウェブカメラ',
-  'female-orgasm': '女性の絶頂'
+  'female-orgasm': '絶頂'
 }
 
 class EditPage extends Component{
