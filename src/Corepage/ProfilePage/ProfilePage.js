@@ -14,7 +14,7 @@ class ProfilePage extends Component{
     this.props.removeHeader()
   }
   onPush_edit_button = () => {
-    this.props.history.push('/app/profile/edit')
+    this.props.history.push('/app/edit')
     this.props.removeHeader()
   }
   render(){
