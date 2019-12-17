@@ -60,7 +60,6 @@ class SwipeCard extends Component{
           <div className='ThumbsStickies'>
             {
               this.state.thumbs_img.map((item, index)=>{
-                console.log(index, this.state.viewing_img_num)
                 if(index === this.state.viewing_img_num) {
                   return <div className='ThumbsSticky active-thumb' style={{width: ((window.parent.screen.width*0.9)/this.state.thumbs_img.length-2)+'px'}}/>
                 } else {
