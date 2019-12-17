@@ -118,7 +118,7 @@ const all_video_genre = [
 ]
 
 
-const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
+const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/test/';
 
 class App extends Component{
   constructor() {
@@ -190,7 +190,7 @@ class App extends Component{
             default:
               axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
               .then((res) => {
-                this.setState(prevState => {
+              this.setState(prevState => {
                   let temp_card_array = prevState.cards;
                   temp_card_array.push(res.data)
                   return { cards: temp_card_array}
