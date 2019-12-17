@@ -29,10 +29,10 @@ class SwipeCard extends Component{
     this.setState({ is_alert: false })
   }
   onClick_card_handler = (event) => {
-    if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=65) {
+    if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=50) {
       //右端をタップ
       console.log('Tap right side')
-    } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=35) {
+    } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=51) {
       //左端をタップ
       console.log('Tap left side')
     }
