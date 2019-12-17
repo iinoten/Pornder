@@ -28,9 +28,18 @@ class SwipeCard extends Component{
     Cookie.set('DEMO_popup_recomended', 1)
     this.setState({ is_alert: false })
   }
+  onClick_card_handler = (event) => {
+    if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=65) {
+      //右端をタップ
+      console.log('Tap right side')
+    } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=35) {
+      //左端をタップ
+      console.log('Tap left side')
+    }
+  }
   render(){
     return(
-      <div className="Card">
+      <div className="Card" onClick={this.onClick_card_handler}>
         <RecomendedGuide open={this.state.is_alert} popdown={this.down_popup} />
         {this.props.recomended?<span className="Recomended-tag"><h3>Recomended!</h3></span>:null}
         {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.props.img_src} />:null}
