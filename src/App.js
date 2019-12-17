@@ -118,6 +118,8 @@ const all_video_genre = [
 ]
 
 
+const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
+
 class App extends Component{
   constructor() {
     super();
@@ -150,7 +152,6 @@ class App extends Component{
   popdown_yet_alert = () => this.setState({ is_open_yet_Alert: false });
 
   first_update_state = () => {
-    const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
           axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
             .then((res) => {
               this.setState(prevState => {
@@ -170,7 +171,6 @@ class App extends Component{
     if(this.state.swipe_count <= 2) {
       this.setState({swipe_count: 5})
       for (let index = 0; index < 5; index++) {
-        const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
         if(Cookies.get('like_types') && (JSON.parse(Cookies.get('like_types')).categories.length > 30)){
           switch (Math.floor(Math.random() * 4)) {
             case 0:
@@ -240,7 +240,6 @@ class App extends Component{
         break;
 
       }
-      const GET_VIDEO_FROM_CATEGORY = 'https://stark-dusk-66489.herokuapp.com/c/';
       axios.get(GET_VIDEO_FROM_CATEGORY, {params: {category: all_video_genre[Math.floor(Math.random() * all_video_genre.length)]}})
       .then((res) => {
         this.setState(prevState => {
