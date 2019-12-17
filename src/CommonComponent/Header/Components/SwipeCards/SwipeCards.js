@@ -66,7 +66,7 @@ class SwipeCards extends Component{
                 }}
                 onAfterSwipe={this.remove}
               >
-                <div className="Swipe-card"><SwipeCard Video_title={this.props.cards[0].title} recomended={this.props.cards[0].recomended} rating={this.props.cards[0].rating} img_src={this.props.cards[0].thumb}/></div>
+                <div className="Swipe-card"><SwipeCard Video_title={this.props.cards[0].title} recomended={this.props.cards[0].recomended} rating={this.props.cards[0].rating} img_src={this.props.cards[0].thumb} thumbs={this.props.cards[0].thumbs}/></div>
               </Swipeable>
             </div>
           ) : (
