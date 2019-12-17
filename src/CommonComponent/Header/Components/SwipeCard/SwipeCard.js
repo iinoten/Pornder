@@ -34,7 +34,6 @@ class SwipeCard extends Component{
     if(this.state.thumbs_img) {
       if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=50) {
         //右端をタップ
-        console.log('Tap right side')
         this.setState((plevstate)=>{
           if(plevstate.viewing_img_num<this.state.thumbs_img.length) {
             return {viewing_img_num: plevstate.viewing_img_num+1}
@@ -42,7 +41,6 @@ class SwipeCard extends Component{
         })
       } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=51) {
         //左端をタップ
-        console.log('Tap left side')
         this.setState((plevstate)=>{
           if(plevstate.viewing_img_num>0) {
             return {viewing_img_num: plevstate.viewing_img_num-1}
@@ -52,7 +50,6 @@ class SwipeCard extends Component{
     }
   }
   render(){
-    console.log(this.state.thumbs_img)
     return(
       <div className="Card" onClick={this.onClick_card_handler}>
         <RecomendedGuide open={this.state.is_alert} popdown={this.down_popup} />
