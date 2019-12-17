@@ -56,8 +56,24 @@ class SwipeCard extends Component{
     return(
       <div className="Card" onClick={this.onClick_card_handler}>
         <RecomendedGuide open={this.state.is_alert} popdown={this.down_popup} />
+        { this.state.thumbs_img ?
+          <div className='ThumbsStickies'>
+            {
+              this.state.thumbs_img.map((item, index)=>{
+                console.log(index, this.state.viewing_img_num)
+                if(index == this.state.viewing_img_num) {
+                  return <div className='ThumbsSticky active-thumb' style={{width: ((window.parent.screen.width*0.9)/this.state.thumbs_img.length-2)+'px'}}/>
+                } else {
+                    return <div className='ThumbsSticky negative-thumb' style={{width: ((window.parent.screen.width*0.9)/this.state.thumbs_img.length-2)+'px'}}/>
+                }
+              })
+            }
+          </div>
+          :
+          null
+        }
         {this.props.recomended?<span className="Recomended-tag"><h3>Recomended!</h3></span>:null}
-        {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.state.thumbs_img[this.state.viewing_img_num]} />:null}
+        {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.state.thumbs_img[this.state.viewing_img_num]}/>:null}
         <div className="Card-description">
           <h5 className="Video-title">{this.props.Video_title}</h5>
           { this.props.rating ?
