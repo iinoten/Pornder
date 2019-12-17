@@ -5,11 +5,13 @@ import RecomendedGuide from '../RecomendedGuide/RecomendedGuide';
 import Cookie from 'js-cookie';
 
 class SwipeCard extends Component{
-  constructor() {
-    super();
+  constructor(props){
+    super(props)
     this.state = {
       is_alert: false,
-      popup_recomended: null
+      popup_recomended: null,
+      thumbs_img: (this.props.img_src?[this.props.img_src, ...this.props.thumbs]:null),
+      viewing_img_num: 0
     }
   }
 
@@ -29,20 +31,33 @@ class SwipeCard extends Component{
     this.setState({ is_alert: false })
   }
   onClick_card_handler = (event) => {
-    if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=50) {
-      //右端をタップ
-      console.log('Tap right side')
-    } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=51) {
-      //左端をタップ
-      console.log('Tap left side')
+    if(this.state.thumbs_img) {
+      if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) >=50) {
+        //右端をタップ
+        console.log('Tap right side')
+        this.setState((plevstate)=>{
+          if(plevstate.viewing_img_num<this.state.thumbs_img.length) {
+            return {viewing_img_num: plevstate.viewing_img_num+1}
+          }
+        })
+      } else if(Math.floor(event.nativeEvent.offsetX/(window.parent.screen.width*0.9)*100) <=51) {
+        //左端をタップ
+        console.log('Tap left side')
+        this.setState((plevstate)=>{
+          if(plevstate.viewing_img_num>0) {
+            return {viewing_img_num: plevstate.viewing_img_num-1}
+          }
+        })
+      }
     }
   }
   render(){
+    console.log(this.state.thumbs_img)
     return(
       <div className="Card" onClick={this.onClick_card_handler}>
         <RecomendedGuide open={this.state.is_alert} popdown={this.down_popup} />
         {this.props.recomended?<span className="Recomended-tag"><h3>Recomended!</h3></span>:null}
-        {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.props.img_src} />:null}
+        {this.props.img_src?<img alt="エッチなサムネ" className="Card_image" src={this.state.thumbs_img[this.state.viewing_img_num]} />:null}
         <div className="Card-description">
           <h5 className="Video-title">{this.props.Video_title}</h5>
           { this.props.rating ?
