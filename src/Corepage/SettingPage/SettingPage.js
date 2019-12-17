@@ -22,7 +22,7 @@ class SettingPage extends Component{
         </div>
         <div className='SettingPage_Subscription_Banner'>
           <h4><div className='Fire-icon'/>porn<span className='title-der'>der</span></h4>
-          <h5>サブスクリプションなんてありません</h5>
+          <h5>サブスクリプションなんて ありません</h5>
         </div>
         <div className='SettingPage-moreTools'>
           <div className="SettingPage-SuperLike">
