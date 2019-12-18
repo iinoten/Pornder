@@ -296,8 +296,7 @@ class App extends Component{
           {this.state.is_header?<Header menu_state={this.state.menu_state} change_menu_handler={this.change_menu}/>:null}
             <Switch>
               <Route path='/app/profile' exact component={()=><ProfilePage removeHeader={this.remove_header} popup_yet_alert={this.popup_yet_alert} />} />
-                <Route path='/app/edits' exact component={()=><SettingPage setHeader={this.set_header}  />} />
-                <Route path='/app/edit' exact component={()=><EditPage setHeader={this.set_header}  />} />
+                <Route path='/app/edits'  component={()=><SettingPage setHeader={this.set_header}  />} />
                 <Route path='/app/settings' exact component={()=><SettingPage setHeader={this.set_header}  />} />
               <Route path='/app/recs' component={()=><AppPage set_Like_videoes_Cookie={this.set_Like_videoes_Cookie} popup_yet_alert={this.popup_yet_alert} update={this.update_cards_state} cards={this.state.cards} add_like_video={this.add_like_video} />} />
               <Route path='/app/matches' component={()=><MatchesPage onDelete={this.onDelete_video_handler} like_videoes={this.state.like_videoes} />} />
